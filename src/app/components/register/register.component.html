@@ -1,0 +1,30 @@
+<!-- Register modal -->
+<form [formGroup]="registerForm">
+<div class="modal fade apartment-modal" id="register-modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <div class="modal-title">
+                    <h1>Register<span class="special-color">.</span></h1>
+                    <div class="short-title-separator"></div>
+                </div>
+                <input formControlName="firstName" name="first-name" type="text" class="input-full main-input" placeholder="Frist name" />
+                <input formControlName="lastName" name="last-name" type="text" class="input-full main-input" placeholder="Last name" />
+                <input formControlName="email" name="email" type="email" class="input-full main-input" placeholder="Email" />
+                <input formControlName="password" name="password" type="password" class="input-full main-input" placeholder="Password" />
+                <input formControlName="passwordCheck" name="repeat-password" type="password" class="input-full main-input" placeholder="Repeat Password" />
+                <button class="button-primary button-shadow button-full" (click)="register()">
+                    <span>Sing up</span>
+                    <div class="button-triangle"></div>
+                    <div class="button-triangle2"></div>
+                    <div class="button-icon"><i class="fa fa-user"></i></div>
+                </button>
+                <div class="clearfix"></div>
+                
+                <p class="modal-bottom">Already registered? <a href="#" class="login-link">SING IN</a></p>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+</form>

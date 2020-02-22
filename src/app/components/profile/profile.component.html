@@ -1,0 +1,306 @@
+<div class="loader-bg"></div>
+<div id="wrapper">
+
+<!-- Page header -->	
+	<header>
+		<div class="top-bar-wrapper">
+			<div class="container top-bar">
+				<div class="row">
+					<div class="col-xs-5 col-sm-8">
+						<div class="top-mail pull-left hidden-xs">
+							<span class="top-icon-circle">
+								<i class="fa fa-envelope fa-sm"></i>
+							</span>
+							<span class="top-bar-text">apartment@domain.tld</span>
+						</div>
+						<div class="top-phone pull-left hidden-xxs">
+							<span class="top-icon-circle">
+								<i class="fa fa-phone"></i>
+							</span>
+							<span class="top-bar-text">(0)-123-456-789</span>
+						</div>
+						<div class="top-localization pull-left hidden-sm hidden-md hidden-xs">
+							<span class="top-icon-circle pull-left">
+								<i class="fa fa-map-marker"></i>
+							</span>
+							<span class="top-bar-text">One Brookings Drive St. Louis, Missouri 63130-4899, USA</span>
+						</div>
+					</div>
+					<div class="col-xs-7 col-sm-4">
+						<div class="top-social-last top-dark pull-right" data-toggle="tooltip" data-placement="bottom" title="Login/Register">
+							<a class="top-icon-circle" href="#login-modal" data-toggle="modal">
+								<i class="fa fa-lock"></i>
+							</a>
+						</div>
+						
+						<div class="top-social pull-right">
+							<a class="top-icon-circle" href="#">
+								<i class="fa fa-facebook"></i>
+							</a>
+						</div>
+						<div class="top-social pull-right">
+							<a class="top-icon-circle" href="#">
+								<i class="fa fa-twitter"></i>
+							</a>
+						</div>
+						<div class="top-social pull-right">
+							<a class="top-icon-circle" href="#">
+								<i class="fa fa-google-plus"></i>
+							</a>
+						</div>
+						<div class="top-social pull-right">
+							<a class="top-icon-circle" href="#">
+								<i class="fa fa-skype"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.top-bar -->	
+		</div><!-- /.Page top-bar-wrapper -->	
+		<nav class="navbar main-menu-cont">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar icon-bar1"></span>
+						<span class="icon-bar icon-bar2"></span>
+						<span class="icon-bar icon-bar3"></span>
+					</button>
+					<a href="index.html" title="" class="navbar-brand">
+						<img src="assets/images/logo-dark.png" alt="Apartment - Premium Real Estate Template" />
+					</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+						<li><a href="/home" class="scroll"> Accueil</a></li>
+						<li><a href="index3-street-view.html" class="scroll">Nos offres</a></li>
+						<li><a href="" class="scroll">Fonctionnalités</a></li>
+						<li><a href="contact1.html" class="scroll">Contact</a></li>
+						<li><a href="#login-modal" data-toggle="modal" >Connexion</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav><!-- /.mani-menu-cont -->	
+    </header>
+	
+  		
+   
+	
+	<section class="section-light section-top-shadow">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-9 col-md-push-3">
+					<div class="row">
+						<div class="col-xs-12">
+							<h5 class="subtitle-margin">edit</h5>
+							<h1>Profile<span class="special-color">.</span></h1>
+							<div class="title-separator-primary"></div>
+						</div>
+					</div>	
+					<form name="agent-from" [formGroup]="updateProfileForm" enctype="multipart/form-data">
+					<div class="row margin-top-60">
+						
+						<div class="col-xs-12 col-sm-9 col-md-8">
+							<div class="labelled-input">
+								<label for="first-name">First name</label><input formControlName="firstName" id="first-name" name="first-name" type="text" class="input-full main-input" placeholder="" />
+								<div class="clearfix"></div>
+							</div>
+							<div class="labelled-input">
+								<label for="last-name">Last name</label><input formControlName="lastName" id="last-name" name="last-name" type="text" class="input-full main-input" placeholder="" />
+								<div class="clearfix"></div>
+							</div>
+							<div class="labelled-input">
+								<label for="email">Email</label><input formControlName="email" id="email" name="email" type="email" class="input-full main-input" placeholder="" />
+								<div class="clearfix"></div>
+							</div>
+							<!--<div class="labelled-input">
+								<label for="phone">Phone</label><input id="phone" name="phone" type="tel" class="input-full main-input" placeholder="" value="123-456-789"/>
+								<div class="clearfix"></div>
+							</div>
+							<div class="labelled-input last">
+								<label for="address">Address</label><input id="address" name="address" type="text" class="input-full main-input" placeholder="" value="Some address here"/>
+								<div class="clearfix"></div>
+							</div>!-->
+						</div>
+					</div>
+					
+				
+					<div class="row margin-top-30">
+						<div class="col-xs-12">
+							<div class="info-box">
+								<p>Fill this fields only if you want to change your password</p>
+								<div class="small-triangle"></div>
+								<div class="small-icon"><i class="fa fa-info fa-lg"></i></div>
+							</div>
+						</div>
+					</div>
+					<div class="row margin-top-15">
+						<div class="col-xs-12 col-lg-6">
+							<div class="labelled-input-short">
+								<label for="first-name">New Password</label>
+								<input formControlName="password" id="password" name="password" type="password" class="input-full main-input" placeholder="" value=""/>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+						<div class="col-xs-12 col-lg-6">
+							<div class="labelled-input-short">
+								<label for="first-name">Repeat Password</label>
+								<input formControlName="passwordCheck" id="repeat-password" name="repeat-password" type="password" class="input-full main-input" placeholder="" value=""/>
+								<div class="clearfix"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row margin-top-15">
+						<div class="col-xs-12">
+							<div class="center-button-cont center-button-cont-border">
+								<button class="button-primary button-shadow" (click)="updateProfile()">
+									<span>save</span>
+									<div class="button-triangle"></div>
+									<div class="button-triangle2"></div>
+									<div class="button-icon"><i class="fa fa-lg fa-floppy-o"></i></div>
+								</button>
+							</div>
+						</div>
+					</div>
+					</form>
+					<div class="row margin-top-60"></div>
+				</div>			
+				<div class="col-xs-12 col-md-3 col-md-pull-9">
+					<div class="sidebar-left">
+						<h3 class="sidebar-title">Welcome back<span class="special-color">.</span></h3>
+						<div class="title-separator-primary"></div>
+						
+						<div class="profile-info margin-top-60">
+							<div class="profile-info-title negative-margin">{{lastName}} {{firstName}}</div>
+							<div class="profile-info-text pull-left">
+								<p class="subtitle-margin">Agent</p>
+								<p class="">42 Estates</p>
+								
+								<a href="/home" role="button" (click)="logout()" class="logout-link margin-top-30"><i class="fa fa-lg fa-sign-out"></i>Logout</a>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="center-button-cont margin-top-15">
+							<a href="my-profile.html" class="button-primary button-shadow button-full">
+								<span>Mon profile</span>
+								<div class="button-triangle"></div>
+								<div class="button-triangle2"></div>
+								<div class="button-icon"><i class="fa fa-user"></i></div>
+							</a>
+						</div>
+												<div class="center-button-cont margin-top-30">
+							<a href="my-offers.html" class="button-alternative button-shadow button-full">
+								<span>Mes devis</span>
+								<div class="button-triangle"></div>
+								<div class="button-triangle2"></div>
+								<div class="button-icon"><i class="fa fa-pencil-square-o"></i></div>
+							</a>
+						</div>
+
+						<div class="center-button-cont margin-top-15">
+							<a href="submit-property.html" class="button-alternative button-shadow button-full">
+								<span>Mes Factures</span>
+								<div class="button-triangle"></div>
+								<div class="button-triangle2"></div>
+								<div class="button-icon"><i class="fa fa-suitcase"></i></div>
+							</a>
+						</div>
+					
+					
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <footer class="large-cont">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 col-sm-6 col-lg-3">
+					<h4 class="second-color">contact us<span class="special-color">.</span></h4>
+					<div class="footer-title-separator"></div>
+					<p class="footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<address>
+						<span><i class="fa fa-map-marker"></i>00456 Some Address line</span>
+						<div class="footer-separator"></div>
+						<span><i class="fa fa-envelope fa-sm"></i><a href="#">email@domain.tld</a></span>
+						<div class="footer-separator"></div>
+						<span><i class="fa fa-phone"></i>01-23456789</span>
+					</address>
+					<div class="clear"></div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-lg-3">
+					<h4 class="second-color">quick links<span class="special-color">.</span></h4>
+					<div class="footer-title-separator"></div>
+					<ul class="footer-ul">
+						<li><span class="custom-ul-bullet"></span><a href="index.html">Home</a></li>
+						<li><span class="custom-ul-bullet"></span><a href="listing-grid-right-sidebar.html">Listing</a></li>
+						<li><span class="custom-ul-bullet"></span><a href="agencies-listing-right-sidebar.html">Agencies</a></li>
+						<li><span class="custom-ul-bullet"></span><a href="archive-grid.html">Blog</a></li>
+						<li><span class="custom-ul-bullet"></span><a href="contact1.html">Contact us</a></li>
+						<li><span class="custom-ul-bullet"></span><a href="submit-property.html">Submit property</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-3">
+					<h4 class="second-color">from the blog<span class="special-color">.</span></h4>
+					<div class="footer-title-separator"></div>
+					<div class="row">
+						<div class="col-xs-6 col-sm-12">
+							<article>
+								<a href="blog-right-sidebar.html"><img src="assets/images/footer-blog1.jpg" alt="" class="footer-blog-image" /></a>
+								<div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
+								<div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
+								<div class="clearfix"></div>					
+							</article>
+							<div class="footer-blog-separator hidden-xs"></div>
+						</div>
+						<div class="col-xs-6 col-sm-12">
+							<article>
+								<a href="blog-right-sidebar.html"><img src="assets/images/footer-blog2.jpg" alt="" class="footer-blog-image" /></a>
+								<div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
+								<div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
+								<div class="clearfix"></div>					
+							</article>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-3">
+					<h4 class="second-color">newsletter<span class="special-color">.</span></h4>
+					<div class="footer-title-separator"></div>
+					<p class="footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<form class="form-inline footer-newsletter">
+						<input type="email" class="form-control" id="exampleInputEmail2" placeholder="enter your email">
+						<button type="submit" class="btn"><i class="fa fa-lg fa-paper-plane"></i></button>
+					</form>
+				</div>
+			</div>
+		</div>
+    </footer>
+	<footer class="small-cont">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-6 small-cont">
+					<img src="assets/images/logo-light.png" alt="" class="img-responsive footer-logo" />
+				</div>
+				<div class="col-xs-12 col-md-6 footer-copyrights">
+					&copy; Copyright 2015 <a href="http://themeforest.net/user/johnnychaos?ref=johnnychaos" target="blank">Jan Skwara</a>. All rights reserved. Buy on <a href="http://themeforest.net/user/johnnychaos/portfolio?ref=johnnychaos" target="blank">Themeforest</a>.
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>	
+
+<!-- Move to top button -->
+
+<div class="move-top">
+	<div class="big-triangle-second-color"></div>
+	<div class="big-icon-second-color"><i class="jfont fa-lg">&#xe803;</i></div>
+</div>	
+
+<!-- Login modal -->
+	
+<!-- Register modal -->
+	
+<!-- Forgotten password modal -->
