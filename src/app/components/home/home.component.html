@@ -49,8 +49,12 @@
                     <li><a href="index3-street-view.html" class="scroll">Nos offres</a></li>
                     <li><a href="" class="scroll">Fonctionnalités</a></li>
                     <li><a href="contact1.html" class="scroll">Contact</a></li>
-                    <li><a href="#login-modal" data-toggle="modal" >Connexion</a></li>
-                    <li><a href="/profile" >Profile</a></li>
+                    
+                    <li *ngIf="!profileDisplay; else noProfileDisplay"><a href="#login-modal" data-toggle="modal" >Connexion</a></li>
+                    <ng-template #noProfileDisplay>
+                        <li><a href="/profile" >{{firstName}} {{lastName}}</a></li>
+                    </ng-template>
+                    
                 </ul>
             </div>
         </div>

@@ -52,7 +52,7 @@ export class UserService {
   logout()
   {
     return this.http.get(this.ipServer+'/users/logout',{
-      observe:'body',
+      //observe:'body',
       withCredentials:true,
       headers:new HttpHeaders().append('Content-Type','application/json')
     });

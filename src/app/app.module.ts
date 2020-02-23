@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
 
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ToastrModule } from 'ngx-toastr';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +31,15 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      progressBar:true,
+      progressAnimation:"increasing",
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }) // ToastrModule added
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
