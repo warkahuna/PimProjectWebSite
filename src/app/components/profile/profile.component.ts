@@ -31,7 +31,7 @@ export class ProfileComponent implements OnInit {
     this._userService.profile()
     .subscribe(
       data=>this.profileFill(data),
-      error=>this.router.navigate(['home'])
+      error=>this.router.navigateByUrl('/home')
     )
   }
 
@@ -60,11 +60,13 @@ export class ProfileComponent implements OnInit {
 
   updateProfile()
   {
+    if(this.updateProfileForm.controls.password.value != null)
+    {
     if((this.updateProfileForm.controls.password.value != this.updateProfileForm.controls.passwordCheck.value))
     {
       this.toastr.error('passwords must match', 'Password Update');
     }
-    else if(this.updateProfileForm.controls.password.value.length < 6)
+    else if(this.updateProfileForm.controls.password.value.length < 6 )
     {
       this.toastr.error('password must be over 6 charachters', 'Password Update');
     }
@@ -82,6 +84,18 @@ export class ProfileComponent implements OnInit {
     this.toastr.success('your profile was updated succefully', 'Profile Update');
     }
   }
-  
+  else{
+    this.firstName = this.updateProfileForm.get('firstName').value;
+    this.lastName = this.updateProfileForm.get('lastName').value;
+    
+    this._userService.updateProfile(JSON.stringify(this.updateProfileForm.value)).subscribe(
+      data=> console.log(data),
+      error=> console.error(error)
+      
+      )
+    console.log(JSON.stringify(this.updateProfileForm.value));
+    this.toastr.success('your profile was updated succefully', 'Profile Update');
+  }
+}
   
 }

@@ -17,6 +17,7 @@ const routes:Routes = [
   {path:'register',component:RegisterComponent},
   {path:'forgotPassword',component:ForgotPasswordComponent},
   {path:'resetPassword/:key',component:ResetPasswordComponent},
+  {path:'**',component:HomeComponent},
 ];
 
 @NgModule({

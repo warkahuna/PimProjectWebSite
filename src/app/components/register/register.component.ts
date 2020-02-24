@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { UserService } from 'src/app/user.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +17,7 @@ export class RegisterComponent implements OnInit {
     password: new FormControl(null,Validators.required),
     passwordCheck: new FormControl(null,Validators.required)
   })
-  constructor(private _userService:UserService) { }
+  constructor(private _userService:UserService,private toastr: ToastrService) { }
 
   ngOnInit() {
   }
@@ -29,8 +30,8 @@ export class RegisterComponent implements OnInit {
       return;
     }
     this._userService.register(JSON.stringify(this.registerForm.value)).subscribe(
-      data=> {console.log(data);},
-      error=> console.error(error)
+      data=> {console.log(data);this.toastr.success('WELCOME', 'Register')},
+      error=> {console.error(error);this.toastr.error('mail already used', 'Register')}
       
       )
     //console.log(JSON.stringify(this.registerForm.value));
