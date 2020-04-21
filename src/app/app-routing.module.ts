@@ -7,6 +7,8 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { MySubscriptionsComponent } from './components/my-subscriptions/my-subscriptions.component';
+import { NewSubscriptionComponent } from './components/new-subscription/new-subscription.component';
 
 
 const routes:Routes = [
@@ -17,6 +19,8 @@ const routes:Routes = [
   {path:'register',component:RegisterComponent},
   {path:'forgotPassword',component:ForgotPasswordComponent},
   {path:'resetPassword/:key',component:ResetPasswordComponent},
+  {path:'mySubscriptions',component:MySubscriptionsComponent},
+  {path:'newSubscriptions',component:NewSubscriptionComponent},
   {path:'**',component:HomeComponent},
 ];
 

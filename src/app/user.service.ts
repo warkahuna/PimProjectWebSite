@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  ipServer = "http://192.168.43.30:5000";
+  ipServer = "http://192.168.1.3:5000";
   constructor(private http: HttpClient) { }
 
   register(body:any)
@@ -60,6 +60,14 @@ export class UserService {
   forgotPasswordChange(body:any,key)
   {
     return this.http.post(this.ipServer+'/users/reset/'+key,body,{
+      observe:'body',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+  newSubscription(body:any)
+  {
+    return this.http.put(this.ipServer+'/users/newSubscription',body,{
       observe:'body',
       headers:new HttpHeaders().append('Content-Type','application/json')
     });

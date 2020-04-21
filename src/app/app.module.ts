@@ -15,6 +15,8 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
+import { MySubscriptionsComponent } from './components/my-subscriptions/my-subscriptions.component';
+import { NewSubscriptionComponent } from './components/new-subscription/new-subscription.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { ToastrModule } from 'ngx-toastr';
     RegisterComponent,
     ForgotPasswordComponent,
     ProfileComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    MySubscriptionsComponent,
+    NewSubscriptionComponent,
   ],
   imports: [
     BrowserModule,
