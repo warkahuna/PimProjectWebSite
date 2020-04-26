@@ -163,6 +163,28 @@
                             </div>
                         </div>
                         </form>-->
+
+                        <table>
+                            <thead>
+                              <tr>
+                                <th>Plan </th>
+                                <th>day started</th>
+                                <th>day ends</th>
+                                <th>days left</th>
+                                <th>status</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr *ngFor="let sub of info2">
+                                <td data-column="Plan">{{sub[0]}}</td>
+                                <td data-column="day started">{{sub[1]}}</td>
+                                <td data-column="day ends">{{sub[2]}}</td>
+                                <td data-column="days left">{{sub[3]}} days</td>
+                                <td data-column="status">{{sub[4]}}</td>
+                              </tr>
+                            </tbody>
+                          </table>
+
                         <div class="center-button-cont center-button-cont-border">
                             <button class="button-primary button-shadow" (click)="newSubscriptions()">
                                 <span>new subscriptions</span>

@@ -40,6 +40,7 @@ export class NewSubscriptionComponent implements OnInit {
       data=>this.profileFill(data),
       error=>this.router.navigateByUrl('/home')
     )
+    
   }
 
   ngOnInit() {
@@ -69,4 +70,6 @@ export class NewSubscriptionComponent implements OnInit {
       )
     //console.log(JSON.stringify(this.registerForm.value));
   }
+
+  
 }
