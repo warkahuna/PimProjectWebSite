@@ -97,108 +97,36 @@
                                 <div class="title-separator-primary"></div>
                             </div>
                         </div>	
-                        <!--<form name="agent-from" [formGroup]="updateProfileForm" enctype="multipart/form-data">
-                        <div class="row margin-top-60">
-                            
-                            <div class="col-xs-12 col-sm-9 col-md-8">
-                                <div class="labelled-input">
-                                    <label for="first-name">First name</label><input formControlName="firstName" id="first-name" name="first-name" type="text" class="input-full main-input" placeholder="" />
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="labelled-input">
-                                    <label for="last-name">Last name</label><input formControlName="lastName" id="last-name" name="last-name" type="text" class="input-full main-input" placeholder="" />
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="labelled-input">
-                                    <label for="email">Email</label><input formControlName="email" id="email" name="email" type="email" class="input-full main-input" placeholder="" />
-                                    <div class="clearfix"></div>
-                                </div>
-                                <!--<div class="labelled-input">
-                                    <label for="phone">Phone</label><input id="phone" name="phone" type="tel" class="input-full main-input" placeholder="" value="123-456-789"/>
-                                    <div class="clearfix"></div>
-                                </div>
-                                <div class="labelled-input last">
-                                    <label for="address">Address</label><input id="address" name="address" type="text" class="input-full main-input" placeholder="" value="Some address here"/>
-                                    <div class="clearfix"></div>
-                                </div>!-->
-                           <!-- </div>
-                        </div>
                         
-                    
-                        <div class="row margin-top-30">
-                            <div class="col-xs-12">
-                                <div class="info-box">
-                                    <p>Fill this fields only if you want to change your password</p>
-                                    <div class="small-triangle"></div>
-                                    <div class="small-icon"><i class="fa fa-info fa-lg"></i></div>
+                        <div class="main-app carousel">
+                        
+                            <div id="chat" class="carousel-cell screen" style=" width: 100%;height: 400px;overflow: auto;">
+                                <h1>chat</h1>
+                                <div class="messages" *ngFor="let messages of info2">
+                                    <div class="you message"> 
+                                        {{messages[0]}}
+                                        <div style="font-size: 70%;text-align: right;">
+                                            {{messages[2] | prettyDate}}
+                                        </div>
+                                    </div>
+                                    <div class="them message" *ngIf="messages[1] !== 'not answered yet';">
+                                        {{messages[1]}}
+                                        <div style="font-size: 70%;text-align: right;" *ngIf="messages[3];">
+                                            {{messages[3] | prettyDate}}
+                                        </div>
+                                    </div>
                                 </div>
+                                
+                        
                             </div>
+                            <form name="agent-from" [formGroup]="sendMessageForm" enctype="multipart/form-data">
+                                <div class="message-field">
+                                    <input formControlName="question" placeholder="ask a question" class="chat-input" type="text" />
+                                    <button class="send-button" (click)="sendMessage()">send</button>
+                                </div>
+                            </form>
+                            
                         </div>
-                        <div class="row margin-top-15">
-                            <div class="col-xs-12 col-lg-6">
-                                <div class="labelled-input-short">
-                                    <label for="first-name">New Password</label>
-                                    <input formControlName="password" id="password" name="password" type="password" class="input-full main-input" placeholder="" value=""/>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                            <div class="col-xs-12 col-lg-6">
-                                <div class="labelled-input-short">
-                                    <label for="first-name">Repeat Password</label>
-                                    <input formControlName="passwordCheck" id="repeat-password" name="repeat-password" type="password" class="input-full main-input" placeholder="" value=""/>
-                                    <div class="clearfix"></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row margin-top-15">
-                            <div class="col-xs-12">
-                                <div class="center-button-cont center-button-cont-border">
-                                    <button class="button-primary button-shadow" (click)="updateProfile()">
-                                        <span>save</span>
-                                        <div class="button-triangle"></div>
-                                        <div class="button-triangle2"></div>
-                                        <div class="button-icon"><i class="fa fa-lg fa-floppy-o"></i></div>
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        </form>-->
-
-                        <table>
-                            <thead>
-                              <tr>
-                                <th>Plan </th>
-                                <th>day started</th>
-                                <th>day ends</th>
-                                <th>days left</th>
-                                <th>status</th>
-                                <th>cancel</th>
-                                <th>refund</th>
-                              </tr>
-                            </thead>
-                            <tbody>
-                              <tr *ngFor="let sub of info2">
-                                <td data-column="Plan">{{sub[0]}}</td>
-                                <td data-column="day started">{{sub[1]}}</td>
-                                <td data-column="day ends">{{sub[2]}}</td>
-                                <td data-column="days left">{{sub[3]}} days</td>
-                                <td data-column="status">{{sub[4]}}</td>
-                                <td data-column="status" >
-                                    <button *ngIf="sub[5] ; else notShow" class="button button3" (click)="cancelSubscription({sub:sub[6],status:sub[4]})">cancel</button>
-                                   
-                                    <ng-template #notShow>
-                                        <button disabled class="button" >canceled</button>
-                                      </ng-template>
-                                </td>
-                                <td data-column="refund" >
-                                    <button *ngIf="!sub[7] ; else notRefund" class="button button3" (click)="requestRefund(sub[6])">request</button>
-                                    <ng-template #notRefund>
-                                        <button disabled class="button" >request</button>
-                                      </ng-template>
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
 
                         <div class="center-button-cont center-button-cont-border">
                             <button class="button-primary button-shadow" (click)="newSubscriptions()">
@@ -209,7 +137,9 @@
                             </button>
                         </div>
                         <div class="row margin-top-60"></div>
-                    </div>			
+                    </div>	
+                    
+                    
                     <div class="col-xs-12 col-md-3 col-md-pull-9">
                         <div class="sidebar-left">
                             <h3 class="sidebar-title">Welcome back<span class="special-color">.</span></h3>

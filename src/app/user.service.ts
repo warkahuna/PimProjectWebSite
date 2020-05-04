@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  ipServer = "http://192.168.46.1:5000";
+  ipServer = "http://192.168.1.3:5000";
   constructor(private http: HttpClient) { }
 
   register(body:any)
@@ -73,6 +73,13 @@ export class UserService {
     });
   }
 
+  cancelSubscription(body:any)
+  {
+    return this.http.put(this.ipServer+'/users/cancelSubscription',body,{
+      observe:'body',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
 
   listSubscription()
   {
@@ -83,5 +90,37 @@ export class UserService {
     });
   }
 
+  cancelTrial(body:any)
+  {
+    return this.http.put(this.ipServer+'/users/cancelTrial',body,{
+      observe:'body',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+  requestRefund(body:any)
+  {
+    return this.http.post(this.ipServer+'/users/refundRequest',body,{
+      observe:'body',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+  askQuestion(body:any)
+  {
+    return this.http.post(this.ipServer+'/users/askQuestons',body,{
+      observe:'body',
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
+
+  listQuestions(body:any)
+  {
+    return this.http.post(this.ipServer+'/users/listquestions',body,{
+      observe:'body',
+      withCredentials:true,
+      headers:new HttpHeaders().append('Content-Type','application/json')
+    });
+  }
 
 }

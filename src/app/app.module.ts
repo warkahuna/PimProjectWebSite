@@ -17,6 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { MySubscriptionsComponent } from './components/my-subscriptions/my-subscriptions.component';
 import { NewSubscriptionComponent } from './components/new-subscription/new-subscription.component';
+import { ChatQuestionsComponent } from './components/chat-questions/chat-questions.component';
+import { NgxPrettyDateModule } from 'ngx-pretty-date';
+
 
 @NgModule({
   declarations: [
@@ -29,6 +32,7 @@ import { NewSubscriptionComponent } from './components/new-subscription/new-subs
     ResetPasswordComponent,
     MySubscriptionsComponent,
     NewSubscriptionComponent,
+    ChatQuestionsComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +40,7 @@ import { NewSubscriptionComponent } from './components/new-subscription/new-subs
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxPrettyDateModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       timeOut: 5000,
