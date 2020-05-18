@@ -10,9 +10,9 @@ import { UserService } from 'src/app/user.service';
   styleUrls: ['./chat-questions.component.css']
 })
 export class ChatQuestionsComponent implements OnInit {
-  
+
   private info = [];
-  private info2 = [];
+  public info2 = [];
   public email:String;
 
   sendMessageForm:FormGroup = new FormGroup({
@@ -22,7 +22,7 @@ export class ChatQuestionsComponent implements OnInit {
     lastName: new FormControl(null),
   })
   constructor(
-    private router: Router, 
+    private router: Router,
     private userService: UserService,
     private toastr: ToastrService,) { }
 
@@ -32,11 +32,11 @@ export class ChatQuestionsComponent implements OnInit {
       data=>{this.profileFill(data),this.listQuestions()},
       error=>this.router.navigateByUrl('/home')
     )
-    
+
   }
 
   profileFill(profileData)
-  { 
+  {
     this.sendMessageForm.get('email').setValue(profileData.email);
     this.sendMessageForm.get('firstName').setValue(profileData.firstName);
     this.sendMessageForm.get('lastName').setValue(profileData.lastName);
@@ -59,7 +59,7 @@ export class ChatQuestionsComponent implements OnInit {
   listQuestions()
   {
     this.info2 = []
-    
+
     console.log(this.email)
 
     this.userService.listQuestions({email:this.sendMessageForm.get('email').value}).subscribe(
@@ -90,5 +90,5 @@ export class ChatQuestionsComponent implements OnInit {
 
     console.log(this.info2);
   }
-  
+
 }

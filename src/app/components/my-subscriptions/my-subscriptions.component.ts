@@ -12,7 +12,7 @@ import { ToastrService } from 'ngx-toastr';
 export class MySubscriptionsComponent implements OnInit {
 
   private info = [];
-  private info2 = [];
+  public info2 = [];
   days;
   diff;
   trial = false;
@@ -85,7 +85,7 @@ export class MySubscriptionsComponent implements OnInit {
     console.log(data.sub)
     if (status == "trialing") {
       console.log(data)
-      
+
       this.userService.cancelTrial({ id: data.sub })
       .subscribe(
         data => console.log(data),
