@@ -24,6 +24,7 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
               "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
@@ -90,6 +91,8 @@
               "src/assets"
             ],
             "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -121,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PimProject"
+    }
+  },
+  "defaultProject": "PimProject",
+  "cli": {
+    "analytics": "d5ef95e2-7c9c-4a06-a4c6-ceb7553ba797"
+  }
 }
