@@ -2,3 +2,26 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import "~bootstrap/dist/css/bootstrap.css";
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+@import '~swiper/dist/css/swiper.min.css';
+
+
+.mat-snack-bar-container.success {
+  background: #388E3C;
+}
+.mat-snack-bar-container.error {
+  background: #E53935;
+}
+
+.orders-table.mat-table .mat-cell .btn-invoice{
+  margin-left: 0;
+  margin-right: 8px;
+}
+
+.info-bar .mat-card .content {
+  margin-left: 0;
+  margin-right: 10px;
+}
