@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { Data, MejdaService } from '../../Services/mejda.service';
+import { Product } from '../../Models/product';
+
 
 @Component({
   selector: 'app-top-menu',
@@ -7,9 +11,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(public mejdaService:MejdaService, public snackBar: MatSnackBar) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
 }
