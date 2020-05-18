@@ -13,6 +13,7 @@ export class ChatQuestionsComponent implements OnInit {
   
   private info = [];
   private info2 = [];
+  public email:String;
 
   sendMessageForm:FormGroup = new FormGroup({
     question: new FormControl(null,Validators.required),
@@ -28,18 +29,18 @@ export class ChatQuestionsComponent implements OnInit {
   ngOnInit() {
     this.userService.profile()
     .subscribe(
-      data=>this.profileFill(data),
+      data=>{this.profileFill(data),this.listQuestions()},
       error=>this.router.navigateByUrl('/home')
     )
-    this.listQuestions()
+    
   }
 
   profileFill(profileData)
-  {
-
+  { 
     this.sendMessageForm.get('email').setValue(profileData.email);
     this.sendMessageForm.get('firstName').setValue(profileData.firstName);
     this.sendMessageForm.get('lastName').setValue(profileData.lastName);
+    this.email= profileData.email;
   }
 
   sendMessage()
@@ -51,11 +52,16 @@ export class ChatQuestionsComponent implements OnInit {
       data=> {console.log(data); this.listQuestions()},
       error=> {console.error(error);this.toastr.success('message was not sent', 'fail')}
       )
+      this.listQuestions();
     }
   }
 
   listQuestions()
   {
+    this.info2 = []
+    
+    console.log(this.email)
+
     this.userService.listQuestions({email:this.sendMessageForm.get('email').value}).subscribe(
       data=> {console.log(data);this.chatFill(data)},
       error=> {console.error(error);this.toastr.success('message was not sent', 'fail')}

@@ -19,6 +19,7 @@ import { MySubscriptionsComponent } from './components/my-subscriptions/my-subsc
 import { NewSubscriptionComponent } from './components/new-subscription/new-subscription.component';
 import { ChatQuestionsComponent } from './components/chat-questions/chat-questions.component';
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
+import { ConstantsService } from './constants.service';
 
 
 @NgModule({
@@ -50,7 +51,7 @@ import { NgxPrettyDateModule } from 'ngx-pretty-date';
       preventDuplicates: true,
     }) // ToastrModule added
   ],
-  providers: [UserService],
+  providers: [UserService,ConstantsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
