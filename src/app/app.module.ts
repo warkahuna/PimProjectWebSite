@@ -12,22 +12,9 @@ import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
-import { MySubscriptionsComponent } from './components/my-subscriptions/my-subscriptions.component';
-import { NewSubscriptionComponent } from './components/new-subscription/new-subscription.component';
-import { ChatQuestionsComponent } from './components/chat-questions/chat-questions.component';
-import { NgxPrettyDateModule } from 'ngx-pretty-date';
-import { ConstantsService } from './constants.service';
-import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
-import { BlogComponent } from './components/blog/blog.component';
-import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.component';
-
-
-
 import { CreateProductComponent } from './components/create-product/create-product.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SharedModule } from './shared/shared.module';
 import { AppSettings } from './app.settings';
@@ -36,7 +23,6 @@ import { AppSettings } from './app.settings';
 
 import { MejdaService } from './Services/mejda.service';
 import { FileUploadService } from './Services/file-upload.service';
-import { BlogService } from './Services/blog.service';
 
 
 
@@ -46,33 +32,29 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 
 import { ProductDialogComponent } from './components/products-list/product-dialog/product-dialog.component';
-import { ChatModule } from './components/chat/chat.module';
 
+
+import { ChatModule } from './components/chat/chat.module';
+import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
+    CartComponent,
+    CompareComponent,
+    WishlistComponent,
+    CheckoutComponent,
+    ProductDialogComponent,
     HomeComponent,
     LoginComponent,
     RegisterComponent,
     ForgotPasswordComponent,
     ProfileComponent,
     ResetPasswordComponent,
-    MySubscriptionsComponent,
-    NewSubscriptionComponent,
-    ChatQuestionsComponent,
-    ChatBotComponent,
-    BlogComponent,
-    EditBlogComponent,
-    CartComponent,
-    CompareComponent,
-    WishlistComponent,
-    CheckoutComponent,
-    ProductDialogComponent,
     CreateProductComponent,
-    ProductsListComponent
-
+    ProductsListComponent,
+    ChatBotComponent
   ],
   imports: [
     BrowserModule,
@@ -80,19 +62,11 @@ import { ChatModule } from './components/chat/chat.module';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    NgxPrettyDateModule,
-    BrowserAnimationsModule, // required animations module
+    BrowserAnimationsModule,
     SharedModule,
-    ChatModule,
-    ToastrModule.forRoot({
-      timeOut: 5000,
-      progressBar:true,
-      progressAnimation:"increasing",
-      positionClass: 'toast-top-right',
-      preventDuplicates: true,
-    }) // ToastrModule added
+    ChatModule
   ],
-  providers: [UserService,ConstantsService , AppSettings, MejdaService, FileUploadService, BlogService ],
+  providers: [UserService, AppSettings, MejdaService, FileUploadService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

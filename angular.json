@@ -5,7 +5,7 @@
   "projects": {
     "PimProject": {
       "projectType": "application",
-      "schematics": {},
+     "schematics": {},
       "root": "",
       "sourceRoot": "src",
       "prefix": "",
@@ -127,6 +127,6 @@
   },
   "defaultProject": "PimProject",
   "cli": {
-    "analytics": "d5ef95e2-7c9c-4a06-a4c6-ceb7553ba797"
+    "analytics": "1846e0e3-8057-43ac-88cb-fd6ff063bb7d"
   }
 }
