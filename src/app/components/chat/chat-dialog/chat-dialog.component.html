@@ -1,1 +1,22 @@
-<p>chat-dialog works!</p>
+
+  <div class="chat-title">
+    <h1>BIOREG HACCP SOLUTION</h1>
+    <h2> Virtual Customer Care ChatBot </h2>
+    <figure class="avatar">
+      <img src="../../../../assets/images/haccp.png" /></figure>
+  </div>
+  <div style="overflow: auto; height: 400px;" #scrollMe [scrollTop]="scrollMe.scrollHeight">
+    <ng-container *ngFor="let message of messages | async">
+
+      <div class="message" [ngClass]="{ 'from': message.sentBy === 'bot',
+                                        'to':   message.sentBy === 'user' }">
+        {{ message.content }}
+      </div>
+
+    </ng-container>
+  </div>
+  <div class="message-box">
+    <textarea style="height: 50px;" [(ngModel)]="formValue" (keyup.enter)="sendMessage()" type="text" class="message-input" placeholder="Type message..."></textarea>
+  </div>
+
+

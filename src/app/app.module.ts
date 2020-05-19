@@ -21,6 +21,8 @@ import { ChatQuestionsComponent } from './components/chat-questions/chat-questio
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
 import { ConstantsService } from './constants.service';
 import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
+import { BlogComponent } from './components/blog/blog.component';
+import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.component';
 
 
 @NgModule({
@@ -36,6 +38,8 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
     NewSubscriptionComponent,
     ChatQuestionsComponent,
     ChatBotComponent,
+    BlogComponent,
+    EditBlogComponent,
   ],
   imports: [
     BrowserModule,
