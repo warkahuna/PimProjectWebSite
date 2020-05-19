@@ -32,9 +32,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import { PerfectScrollbarModule } from 'ngx-perfect-scrollbar';
 import { PERFECT_SCROLLBAR_CONFIG } from 'ngx-perfect-scrollbar';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
-
-
-
+import { ControlsComponent } from './controls/controls.component';
+import { TopMenuComponent } from './top-menu/top-menu.component';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   wheelPropagation: true,
   suppressScrollX: true
@@ -91,7 +90,9 @@ MatTableModule,
 MatPaginatorModule,
 PerfectScrollbarModule,
 ReactiveFormsModule,
+ControlsComponent,
 MatDialogModule,
+TopMenuComponent,
 MatCardModule,
 MatStepperModule
 
@@ -100,6 +101,6 @@ providers: [
   { provide: PERFECT_SCROLLBAR_CONFIG, useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG },
 MatDatepickerModule,
 ],
-declarations: []
+declarations: [ControlsComponent, TopMenuComponent]
 })
 export class SharedModule { }
