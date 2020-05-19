@@ -20,6 +20,7 @@ import { NewSubscriptionComponent } from './components/new-subscription/new-subs
 import { ChatQuestionsComponent } from './components/chat-questions/chat-questions.component';
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
 import { ConstantsService } from './constants.service';
+import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { ConstantsService } from './constants.service';
     MySubscriptionsComponent,
     NewSubscriptionComponent,
     ChatQuestionsComponent,
+    ChatBotComponent,
   ],
   imports: [
     BrowserModule,
