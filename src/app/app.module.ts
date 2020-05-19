@@ -25,6 +25,31 @@ import { BlogComponent } from './components/blog/blog.component';
 import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.component';
 
 
+
+import { CreateProductComponent } from './components/create-product/create-product.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+
+import { SharedModule } from './shared/shared.module';
+import { AppSettings } from './app.settings';
+
+
+
+import { MejdaService } from './Services/mejda.service';
+import { FileUploadService } from './Services/file-upload.service';
+import { BlogService } from './Services/blog.service';
+
+
+
+import { CartComponent } from './components/cart/cart.component';
+import { CompareComponent } from './components/compare/compare.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+
+import { ProductDialogComponent } from './components/products-list/product-dialog/product-dialog.component';
+import { ChatModule } from './components/chat/chat.module';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,6 +65,14 @@ import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.compone
     ChatBotComponent,
     BlogComponent,
     EditBlogComponent,
+    CartComponent,
+    CompareComponent,
+    WishlistComponent,
+    CheckoutComponent,
+    ProductDialogComponent,
+    CreateProductComponent,
+    ProductsListComponent
+
   ],
   imports: [
     BrowserModule,
@@ -49,6 +82,8 @@ import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.compone
     HttpClientModule,
     NgxPrettyDateModule,
     BrowserAnimationsModule, // required animations module
+    SharedModule,
+    ChatModule,
     ToastrModule.forRoot({
       timeOut: 5000,
       progressBar:true,
@@ -57,7 +92,7 @@ import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.compone
       preventDuplicates: true,
     }) // ToastrModule added
   ],
-  providers: [UserService,ConstantsService],
+  providers: [UserService,ConstantsService , AppSettings, MejdaService, FileUploadService, BlogService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
