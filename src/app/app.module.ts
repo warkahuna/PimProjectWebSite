@@ -36,6 +36,9 @@ import { ProductDialogComponent } from './components/products-list/product-dialo
 
 import { ChatModule } from './components/chat/chat.module';
 import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
+import { ToastrModule } from 'ngx-toastr';
+
+
 
 
 @NgModule({
@@ -54,7 +57,8 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
     ResetPasswordComponent,
     CreateProductComponent,
     ProductsListComponent,
-    ChatBotComponent
+    ChatBotComponent,
+
   ],
   imports: [
     BrowserModule,
@@ -64,7 +68,14 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
-    ChatModule
+    ChatModule,
+    ToastrModule.forRoot({
+      timeOut: 5000,
+      progressBar:true,
+      progressAnimation:"increasing",
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }) // ToastrModule added
   ],
   providers: [UserService, AppSettings, MejdaService, FileUploadService ],
   bootstrap: [AppComponent]

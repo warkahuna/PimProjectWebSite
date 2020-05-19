@@ -5,10 +5,10 @@
   "projects": {
     "PimProject": {
       "projectType": "application",
-     "schematics": {},
+      "schematics": {},
       "root": "",
       "sourceRoot": "src",
-      "prefix": "",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -25,7 +25,6 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/ngx-toastr/toastr.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -91,7 +90,6 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -127,6 +125,6 @@
   },
   "defaultProject": "PimProject",
   "cli": {
-    "analytics": "1846e0e3-8057-43ac-88cb-fd6ff063bb7d"
+    "analytics": "2fe0bb2c-c919-456c-89f2-072e2b02e3e8"
   }
 }
