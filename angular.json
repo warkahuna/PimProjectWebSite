@@ -121,6 +121,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "PimProject"
+    }
+  },
+  "defaultProject": "PimProject",
+  "cli": {
+    "analytics": "256219f4-204a-4ef5-81b6-618d052a2048"
+  }
 }
