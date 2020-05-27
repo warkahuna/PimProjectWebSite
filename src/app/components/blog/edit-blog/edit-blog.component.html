@@ -1,4 +1,4 @@
-
+<div class="loader-bg"></div>
 <div id="wrapper">
 
 <!-- Page header -->
@@ -72,25 +72,22 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
-						<li><a href="/home" class="scroll"> Accueil</a></li>
-						<li><a href="index3-street-view.html" class="scroll">Nos offres</a></li>
-						<li><a href="" class="scroll">Fonctionnalités</a></li>
-						<li><a href="contact1.html" class="scroll">Contact</a></li>
-            <li><a href="#login-modal" data-toggle="modal" >Connexion</a></li>
+            <li><a href="index2.html" class="scroll"> Accueil</a></li>
+
 
 
             <li><a routerLink="/blog" class="scroll"> BLOG </a></li>
 
 
 
+						<li><a href="" class="scroll">Fonctionnalités</a></li>
+						<li><a href="contact1.html" class="scroll">Contact</a></li>
+						<li><a href="#login-modal" data-toggle="modal" >Connexion</a></li>
 					</ul>
 				</div>
 			</div>
 		</nav><!-- /.mani-menu-cont -->
     </header>
-
-
-
 
 	<section class="section-light section-top-shadow">
 		<div class="container">
@@ -98,77 +95,69 @@
 				<div class="col-xs-12 col-md-9 col-md-push-3">
 					<div class="row">
 						<div class="col-xs-12">
-							<h5 class="subtitle-margin">edit</h5>
-							<h1>Profile<span class="special-color">.</span></h1>
+							<h5 class="subtitle-margin">Welcome</h5>
+							<h1>OUR BLOG<span class="special-color">.</span></h1>
 							<div class="title-separator-primary"></div>
 						</div>
-					</div>
-					<form name="agent-from" [formGroup]="updateProfileForm" enctype="multipart/form-data">
-					<div class="row margin-top-60">
-
-						<div class="col-xs-12 col-sm-9 col-md-8">
-							<div class="labelled-input">
-								<label for="first-name">First name</label><input formControlName="firstName" id="first-name" name="first-name" type="text" class="input-full main-input" placeholder="" />
-								<div class="clearfix"></div>
-							</div>
-							<div class="labelled-input">
-								<label for="last-name">Last name</label><input formControlName="lastName" id="last-name" name="last-name" type="text" class="input-full main-input" placeholder="" />
-								<div class="clearfix"></div>
-							</div>
-							<div class="labelled-input">
-								<label for="email">Email</label><input formControlName="email" id="email" name="email" type="email" class="input-full main-input" placeholder="" />
-								<div class="clearfix"></div>
-							</div>
-							<!--<div class="labelled-input">
-								<label for="phone">Phone</label><input id="phone" name="phone" type="tel" class="input-full main-input" placeholder="" value="123-456-789"/>
-								<div class="clearfix"></div>
-							</div>
-							<div class="labelled-input last">
-								<label for="address">Address</label><input id="address" name="address" type="text" class="input-full main-input" placeholder="" value="Some address here"/>
-								<div class="clearfix"></div>
-							</div>!-->
-						</div>
-					</div>
+          </div>
 
 
-					<div class="row margin-top-30">
-						<div class="col-xs-12">
-							<div class="info-box">
-								<p>Fill this fields only if you want to change your password</p>
-								<div class="small-triangle"></div>
-								<div class="small-icon"><i class="fa fa-info fa-lg"></i></div>
-							</div>
-						</div>
-					</div>
-					<div class="row margin-top-15">
-						<div class="col-xs-12 col-lg-6">
-							<div class="labelled-input-short">
-								<label for="first-name">New Password</label>
-								<input formControlName="password" id="password" name="password" type="password" class="input-full main-input" placeholder="" value=""/>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-						<div class="col-xs-12 col-lg-6">
-							<div class="labelled-input-short">
-								<label for="first-name">Repeat Password</label>
-								<input formControlName="passwordCheck" id="repeat-password" name="repeat-password" type="password" class="input-full main-input" placeholder="" value=""/>
-								<div class="clearfix"></div>
-							</div>
-						</div>
-					</div>
-					<div class="row margin-top-15">
-						<div class="col-xs-12">
-							<div class="center-button-cont center-button-cont-border">
-								<button class="button-primary button-shadow" (click)="updateProfile()">
-									<span>save</span>
-									<div class="button-triangle"></div>
-									<div class="button-triangle2"></div>
-									<div class="button-icon"><i class="fa fa-lg fa-floppy-o"></i></div>
-								</button>
-							</div>
-						</div>
-					</div>
-					</form>
+
+
+
+
+
+
+
+
+
+<h1 class="page-header">Edit Blog</h1>
+
+<!-- Custom Success/Erro Message -->
+<div class="row show-hide-message" *ngIf="message">
+  <div [ngClass]="messageClass">
+    {{ message }}
+  </div>
+</div>
+
+<!-- Edit Blog Form -->
+<form (submit)="updateBlogSubmit()" >
+  <!-- Title Field -->
+  <div class="form-group">
+    <label for="title">Title</label>
+    <!-- Title Input -->
+    <input [disabled]="processing" type="text" name="title" placeholder="*Blog Title" class="form-control" [(ngModel)]="blog.title" />
+  </div>
+
+  <!-- Body Field -->
+  <div class="form-group">
+    <label for="body">Body</label>
+    <!-- Body Input -->
+    <textarea [disabled]="processing" name="body" rows="8" cols="80" [(ngModel)]="blog.body" class="form-control" placeholder="*Blog Body"></textarea>
+  </div>
+
+  <!-- Delete Button
+  <a [routerLink]="['/delete-blog/', blog._id]"><button  [disabled]="processing"
+    type="button" name="button" class="btn btn-danger">Delete</button></a> -->
+  <!-- Go Back Button -->
+  <button [disabled]="processing" type="button" name="button" class="btn btn-success" (click)="goBack()">Go Back</button>
+  <!-- Save Changes Button -->
+  <button [disabled]="processing" type="submit" name="save" class="btn btn-info">Save Changes</button>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
 					<div class="row margin-top-60"></div>
 				</div>
 				<div class="col-xs-12 col-md-3 col-md-pull-9">
@@ -182,12 +171,12 @@
 								<p class="subtitle-margin">Agent</p>
 								<p class="">42 Estates</p>
 
-								<a href="/home" role="button" (click)="logout()" class="logout-link margin-top-30"><i class="fa fa-lg fa-sign-out"></i>Logout</a>
+								<a role="button"  class="logout-link margin-top-30"><i class="fa fa-lg fa-sign-out"></i>Logout</a>
 							</div>
 							<div class="clearfix"></div>
 						</div>
 						<div class="center-button-cont margin-top-15">
-							<a href="/profile" class="button-primary button-shadow button-full">
+							<a href="my-profile.html" class="button-primary button-shadow button-full">
 								<span>Mon profile</span>
 								<div class="button-triangle"></div>
 								<div class="button-triangle2"></div>
@@ -195,8 +184,8 @@
 							</a>
 						</div>
 												<div class="center-button-cont margin-top-30">
-							<a href="/mySubscriptions"  class="button-alternative button-shadow button-full">
-								<span>My Subscriptions</span>
+							<a href="my-offers.html" class="button-alternative button-shadow button-full">
+								<span>Mes devis</span>
 								<div class="button-triangle"></div>
 								<div class="button-triangle2"></div>
 								<div class="button-icon"><i class="fa fa-pencil-square-o"></i></div>
@@ -204,16 +193,13 @@
 						</div>
 
 						<div class="center-button-cont margin-top-15">
-							<a href="/chatQuestions" class="button-alternative button-shadow button-full">
-								<span>Questions</span>
+							<a href="submit-property.html" class="button-alternative button-shadow button-full">
+								<span>Mes Factures</span>
 								<div class="button-triangle"></div>
 								<div class="button-triangle2"></div>
 								<div class="button-icon"><i class="fa fa-suitcase"></i></div>
 							</a>
 						</div>
-
-
-
 
 					</div>
 				</div>
@@ -306,7 +292,96 @@
 </div>
 
 <!-- Login modal -->
+	<div class="modal fade apartment-modal" id="login-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<div class="modal-title">
+						<h1>Login<span class="special-color">.</span></h1>
+						<div class="short-title-separator"></div>
+					</div>
+					<input name="login" type="email" class="input-full main-input" placeholder="Email" />
+					<input name="password" type="password" class="input-full main-input" placeholder="Your Password" />
+					<a href="my-profile.html" class="button-primary button-shadow button-full">
+						<span>Sing In</span>
+						<div class="button-triangle"></div>
+						<div class="button-triangle2"></div>
+						<div class="button-icon"><i class="fa fa-user"></i></div>
+					</a>
+					<a href="#" class="forgot-link pull-right">Forgot your password?</a>
+					<div class="clearfix"></div>
+					<p class="login-or">OR</p>
+					<a href="#" class="facebook-button">
+						<i class="fa fa-facebook"></i>
+						<span>Login with Facebook</span>
+					</a>
+					<a href="#" class="google-button margin-top-15">
+						<i class="fa fa-google-plus"></i>
+						<span>Login with Google</span>
+					</a>
+					<p class="modal-bottom">Don't have an account? <a href="#" class="register-link">REGISTER</a></p>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
 <!-- Register modal -->
+	<div class="modal fade apartment-modal" id="register-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<div class="modal-title">
+						<h1>Register<span class="special-color">.</span></h1>
+						<div class="short-title-separator"></div>
+					</div>
+					<input name="first-name" type="text" class="input-full main-input" placeholder="Frist name" />
+					<input name="last-name" type="text" class="input-full main-input" placeholder="Last name" />
+					<input name="email" type="email" class="input-full main-input" placeholder="Email" />
+					<input name="password" type="password" class="input-full main-input" placeholder="Password" />
+					<input name="repeat-password" type="password" class="input-full main-input" placeholder="Repeat Password" />
+					<a href="my-profile.html" class="button-primary button-shadow button-full">
+						<span>Sing up</span>
+						<div class="button-triangle"></div>
+						<div class="button-triangle2"></div>
+						<div class="button-icon"><i class="fa fa-user"></i></div>
+					</a>
+					<div class="clearfix"></div>
+					<p class="login-or">OR</p>
+					<a href="#" class="facebook-button">
+						<i class="fa fa-facebook"></i>
+						<span>Sing Up with Facebook</span>
+					</a>
+					<a href="#" class="google-button margin-top-15">
+						<i class="fa fa-google-plus"></i>
+						<span>Sing Up with Google</span>
+					</a>
+					<p class="modal-bottom">Already registered? <a href="#" class="login-link">SING IN</a></p>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 
 <!-- Forgotten password modal -->
+	<div class="modal fade apartment-modal" id="forgot-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<div class="modal-title">
+						<h1>Forgot your password<span class="special-color">?</span></h1>
+						<div class="short-title-separator"></div>
+					</div>
+					<p class="negative-margin forgot-info">Instert your account email address.<br/>We will send you a link to reset your password.</p>
+					<input name="login" type="email" class="input-full main-input" placeholder="Your email" />
+					<a href="my-profile.html" class="button-primary button-shadow button-full">
+						<span>Reset password</span>
+						<div class="button-triangle"></div>
+						<div class="button-triangle2"></div>
+						<div class="button-icon"><i class="fa fa-user"></i></div>
+					</a>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->

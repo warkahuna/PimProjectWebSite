@@ -21,6 +21,9 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 
 
 
+import { BlogComponent } from './components/blog/blog.component';
+import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.component';
+
 
 
 const routes:Routes = [
@@ -36,6 +39,8 @@ const routes:Routes = [
   {path:'products-list',component:ProductsListComponent},
   {path:'wishList',component:WishlistComponent},
   {path:'checkout',component:CheckoutComponent},
+  {path:'blog',component:BlogComponent},
+  {path:'edit-blog/:id',component:EditBlogComponent},
   {path:'chat-bot',component:ChatBotComponent}
 
 ];

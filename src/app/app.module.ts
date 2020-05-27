@@ -45,6 +45,9 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { ChatModule } from './chat/chat.module';
 
 
+import { BlogComponent } from './components/blog/blog.component';
+import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.component';
+
 
 
 
@@ -67,7 +70,9 @@ import { ChatModule } from './chat/chat.module';
     MySubscriptionsComponent,
     NewSubscriptionComponent,
     ChatQuestionsComponent,
-    ChatBotComponent
+    ChatBotComponent,
+    BlogComponent,
+    EditBlogComponent
 
   ],
   imports: [
