@@ -17,6 +17,7 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 
 
 
+import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 
 
 
@@ -35,6 +36,8 @@ const routes:Routes = [
   {path:'products-list',component:ProductsListComponent},
   {path:'wishList',component:WishlistComponent},
   {path:'checkout',component:CheckoutComponent},
+  {path:'chat-bot',component:ChatBotComponent}
+
 ];
 
 @NgModule({

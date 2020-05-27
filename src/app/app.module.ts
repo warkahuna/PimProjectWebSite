@@ -21,6 +21,8 @@ import { ChatQuestionsComponent } from './components/chat-questions/chat-questio
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
 
 
+import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
+
 
 
 
@@ -40,6 +42,7 @@ import { WishlistComponent } from './components/wishlist/wishlist.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ProductDialogComponent } from './components/products-list/product-dialog/product-dialog.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
+import { ChatModule } from './chat/chat.module';
 
 
 
@@ -64,6 +67,8 @@ import { ProductsListComponent } from './components/products-list/products-list.
     MySubscriptionsComponent,
     NewSubscriptionComponent,
     ChatQuestionsComponent,
+    ChatBotComponent
+
   ],
   imports: [
     BrowserModule,
@@ -73,6 +78,7 @@ import { ProductsListComponent } from './components/products-list/products-list.
     HttpClientModule,
     NgxPrettyDateModule,
     SharedModule,
+    ChatModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       timeOut: 5000,
