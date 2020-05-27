@@ -9,9 +9,14 @@ import { UserService } from 'src/app/user.service';
 })
 
 export class HomeComponent implements OnInit {
+
+
+
   profileDisplay=false;
   firstName;
   lastName;
+
+
   constructor(private _userService:UserService, private router:Router) {
     this._userService.profile()
     .subscribe(
@@ -28,11 +33,11 @@ export class HomeComponent implements OnInit {
     this.firstName = profileData.firstName;
     this.lastName = profileData.lastName;
     //this.email = profileData.email;
-    
+
   }
   profileNotFill()
   {
-    this.profileDisplay = false;    
+    this.profileDisplay = false;
   }
 
 }

@@ -12,6 +12,22 @@ import { NewSubscriptionComponent } from './components/new-subscription/new-subs
 import { ChatQuestionsComponent } from './components/chat-questions/chat-questions.component';
 
 
+
+
+
+
+import { CompareComponent } from './components/compare/compare.component';
+import { CreateProductComponent } from './components/create-product/create-product.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { CartComponent } from './components/cart/cart.component';
+
+
+
+
+
+
 const routes:Routes = [
   {path:'home',component:HomeComponent},
   {path:'',component:HomeComponent},
@@ -24,6 +40,12 @@ const routes:Routes = [
   {path:'newSubscriptions',component:NewSubscriptionComponent},
   {path:'chatQuestions',component:ChatQuestionsComponent},
   {path:'**',component:HomeComponent},
+  {path:'cart',component:CartComponent},
+  {path:'compare',component:CompareComponent},
+  {path:'create-product',component:CreateProductComponent},
+  {path:'products-list',component:ProductsListComponent},
+  {path:'wishList',component:WishlistComponent},
+  {path:'checkout',component:CheckoutComponent}
 ];
 
 @NgModule({

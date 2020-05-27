@@ -21,9 +21,40 @@ import { ChatQuestionsComponent } from './components/chat-questions/chat-questio
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
 
 
+
+
+
+
+
+
+import { MejdaService } from './Services/mejda.service';
+import { FileUploadService } from './Services/file-upload.service';
+import { BlogService } from './Services/blog.service';
+
+
+import { SharedModule } from './shared/shared.module';
+import { AppSettings } from './app.settings';
+import { CartComponent } from './components/cart/cart.component';
+import { CompareComponent } from './components/compare/compare.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { ProductDialogComponent } from './components/products-list/product-dialog/product-dialog.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+
+
+
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
+    CartComponent,
+    CompareComponent,
+    WishlistComponent,
+    CheckoutComponent,
+    ProductDialogComponent,
+    ProductsListComponent,
     HomeComponent,
     LoginComponent,
     RegisterComponent,
@@ -41,6 +72,7 @@ import { NgxPrettyDateModule } from 'ngx-pretty-date';
     ReactiveFormsModule,
     HttpClientModule,
     NgxPrettyDateModule,
+    SharedModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       timeOut: 5000,
@@ -50,7 +82,7 @@ import { NgxPrettyDateModule } from 'ngx-pretty-date';
       preventDuplicates: true,
     }) // ToastrModule added
   ],
-  providers: [UserService],
+  providers: [UserService , AppSettings, MejdaService, FileUploadService, BlogService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
