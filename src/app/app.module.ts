@@ -25,13 +25,16 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 
 
 
+import { BlogService } from './Services/blog.service';
 
+
+import { BlogComponent } from './blog/blog.component';
+import { EditBlogComponent } from './blog/edit-blog/edit-blog.component';
 
 
 
 import { MejdaService } from './Services/mejda.service';
 import { FileUploadService } from './Services/file-upload.service';
-import { BlogService } from './Services/blog.service';
 
 
 import { SharedModule } from './shared/shared.module';
@@ -44,9 +47,6 @@ import { ProductDialogComponent } from './components/products-list/product-dialo
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { ChatModule } from './chat/chat.module';
 
-
-import { BlogComponent } from './components/blog/blog.component';
-import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.component';
 
 
 
@@ -70,9 +70,10 @@ import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.compone
     MySubscriptionsComponent,
     NewSubscriptionComponent,
     ChatQuestionsComponent,
-    ChatBotComponent,
     BlogComponent,
-    EditBlogComponent
+    EditBlogComponent,
+    ChatBotComponent
+
 
   ],
   imports: [

@@ -20,9 +20,10 @@ import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 
 
+import { BlogComponent } from './blog/blog.component';
+import { EditBlogComponent } from './blog/edit-blog/edit-blog.component';
 
-import { BlogComponent } from './components/blog/blog.component';
-import { EditBlogComponent } from './components/blog/edit-blog/edit-blog.component';
+
 
 
 
