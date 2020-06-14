@@ -1,7 +1,7 @@
-<div class="loader-bg"></div>
+ 
 <div id="wrapper" class="wrapper2">
 
-<!-- Page header -->
+<!-- Page header -->	
 <header class="header2">
     <div class="top-bar-wrapper">
         <div class="container top-bar">
@@ -26,15 +26,39 @@
                         <span class="top-bar-text">Adresse</span>
                     </div>
                 </div>
-
+            
             </div>
-        </div><!-- /.top-bar -->
-    </div><!-- /.Page top-bar-wrapper -->
-
-
-<app-top-menu></app-top-menu>
-
-
+        </div><!-- /.top-bar -->	
+    </div><!-- /.Page top-bar-wrapper -->	
+    <nav class="navbar main-menu-cont">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar icon-bar1"></span>
+                    <span class="icon-bar icon-bar2"></span>
+                    <span class="icon-bar icon-bar3"></span>
+                </button>
+                <a href="index.html" title="" class="navbar-brand">
+                    <img src="assets/images/logo-light.png" alt="Apartment - Premium Real Estate Template" />
+                </a>
+            </div>
+<div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="index2.html" class="scroll"> Accueil</a></li>
+                    <li><a href="index3-street-view.html" class="scroll">Nos offres</a></li>
+                    <li><a href="" class="scroll">Fonctionnalités</a></li>
+                    <li><a href="contact1.html" class="scroll">Contact</a></li>
+                    
+                    <li *ngIf="!profileDisplay; else noProfileDisplay"><a href="#login-modal" data-toggle="modal" >Connexion</a></li>
+                    <ng-template #noProfileDisplay>
+                        <li><a href="/profile" >{{firstName}} {{lastName}}</a></li>
+                    </ng-template>
+                    
+                </ul>
+            </div>
+        </div>
+    </nav><!-- /.mani-menu-cont -->	
 </header>
 
 <section class="no-padding adv-search-section">
@@ -58,9 +82,9 @@
                     <div class="row">
                         <div class="col-xs-8 col-xs-offset-2 animated fadeInDown slide2-desc slide2-desc-1">
                             <h1 class="second-color">PASSEZ AU DIGITAL !<span class="special-color"></span></h1>
-                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>									
                             <p class="swiper2-text">Gagnez du temps et simplifiez la vie de vos équipes pour votre plan de maitrise santiaire </p>
-
+                            
                         </div>
                     </div>
                 </div>
@@ -71,9 +95,9 @@
                     <div class="row">
                         <div class="col-xs-8 col-xs-offset-2 animated slide2-desc slide2-desc-2">
                             <h1 class="second-color">titre<span class="special-color">.</span></h1>
-                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>									
                             <p class="swiper2-text">description</p>
-
+                        
                         </div>
                     </div>
                 </div>
@@ -89,9 +113,9 @@
                     <div class="row">
                         <div class="col-xs-8 col-xs-offset-2 animated slide2-desc slide2-desc-3">
                             <h1 class="second-color">titre<span class="special-color">.</span></h1>
-                            <div class="clearfix"></div>
+                            <div class="clearfix"></div>									
                             <p class="swiper2-text">description</p>
-
+                            
                         </div>
                     </div>
                 </div>
@@ -105,14 +129,14 @@
 
 
 
-<app-products-list></app-products-list>
+
 
 
 <section class="section-light bottom-padding-45 section-both-shadow" style="
 padding-top: 40px;">
     <div class="container">
         <div class="row">
-
+        
                <section>
     <div class="container">
         <div class="row">
@@ -120,7 +144,7 @@ padding-top: 40px;">
                 <h5 class="subtitle-margin">Solution Haccp</h5>
                         <h1 class="">BIOREG<span class="special-color"></span></h1>
             </div>
-
+        
             <div class="col-xs-8 col-xs-offset-2 col-sm-offset-4 col-sm-4">
                 <div class="title-separator-primary2"></div>
             </div>
@@ -131,7 +155,7 @@ padding-top: 40px;">
             <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2 text-center">
                 <p class="negative-margin">Une solution tactile innovante pour simplifier votre démarche HACCP et vous permettre,
 en quelques minutes, de réaliser les enregistrements de votre Plan de Maitrise Sanitaire (PMS)</p>
-
+            
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -145,7 +169,7 @@ en quelques minutes, de réaliser les enregistrements de votre Plan de Maitrise 
             <div class="col-xs-12 col-lg-12 text-center">
                         <h1 class="">Pourquoi choisir BIOREG ?<span class="special-color"></span></h1>
             </div>
-
+        
             <div class="col-xs-8 col-xs-offset-2 col-sm-offset-4 col-sm-4">
                 <div class="title-separator-primary2"></div>
             </div>
@@ -160,48 +184,48 @@ en quelques minutes, de réaliser les enregistrements de votre Plan de Maitrise 
                     <div class="feature2-icon"><i class="fa fa-file"></i></div>
                     <div class="feature2-text">
                         <h4>Zéro papier<span class="special-color">.</span></h4>
-
+                        
                         <p>Tous vos enregistrements obligatoires sont réalisés, en quelques minutes par jour,
 sur l’écran tactile au sein même de la cuisine. C’est plus pratique </p>
                     </div>
                 </div>
-            </div>
+            </div>			
             <div class="col-sm-6 col-lg-4">
                 <div class="feature2 wow fadeInUp" id="feature2">
                     <div class="feature2-icon"><i class="fa fa-clock-o"></i></div>
                     <div class="feature2-text">
                         <h4>Gain de temps<span class="special-color">.</span></h4>
-
+                        
                         <p>Plus besoin de découper vos étiquettes de traçabilité ou de compléter vos fiches de relevés de températures. Cliquez c’est enregistré et classé.</p>
                     </div>
                 </div>
-            </div>
+            </div>			
             <div class="col-sm-6 col-lg-4">
                 <div class="feature2 wow fadeInRight" id="feature3">
                     <div class="feature2-icon"><i class="fa fa-industry"></i></div>
                     <div class="feature2-text">
                         <h4>Moins de stress<span class="special-color">.</span></h4>
-
+                        
                         <p>Toutes les informations sont enregistrées, classées et sauvegardées automatiquement. L’accès à l’historique des enregistrements se fait directement sur l’écran, en quelques clics.</p>
                     </div>
                 </div>
-            </div>
-
-
-
+            </div>			
+            
+                    
+                    
         </div>
     </div>
 </section>
 
 <section class="featured-offers parallax">
-
+    
     <div class="container">
         <div class="row">
             <div class="col-xs-12 col-sm-offset-3 col-sm-6 text-center">
-
+                
                         <h1 class="second-color">Comment ça marche ?<span class="special-color"></span></h1>
             </div>
-
+            
             <div class="col-xs-12" style="
 padding-bottom: 30px;">
                 <div class="title-separator-secondary2"></div>
@@ -211,12 +235,11 @@ padding-bottom: 30px;">
     <div class="container">
         <div class="row">
         <div class="col-sm-6">
-
-
-
-</div>
-
-
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY?playlist=tgbNymZ7vqY&loop=1">
+</iframe></div>
+    
+    
     <div class="col-sm-6">
     <div class="card text-center">
     <br/>
@@ -249,14 +272,14 @@ padding-bottom: 30px;">
 <section class="section-light">
     <div class="container">
         <div class="row">
-
-
-
-
-
+            
+            
+        
+        
+        
         </div>
     </div>
-</section>
+</section>	
 
 
 
@@ -265,25 +288,25 @@ padding-bottom: 30px;">
         <div class="row count-container">
             <div class="col-xs-6 col-lg-3">
                 <div class="number" id="number1">
-                    <div class="number-img">
+                    <div class="number-img">	
                         <i class="fa fa-credit-card"></i>
                     </div>
                     <span class="number-label text-color2">Paiement sécurisé</span>
-
+                    
                 </div>
             </div>
             <div class="col-xs-6 col-lg-3 number_border">
                 <div class="number" id="number2">
-                    <div class="number-img">
+                    <div class="number-img">	
                     <i class="fa fa-truck"></i>
-                    </div>
+                    </div>			
                     <span class="number-label text-color2">Livraison 24-48h</span>
-
+                    
                 </div>
             </div>
             <div class="col-xs-6 col-lg-3 number_border3">
                 <div class="number" id="number3">
-                    <div class="number-img">
+                    <div class="number-img">	
                         <i class="fa fa-check-square"></i>
                     </div>
                     <span class="number-label text-color2">En stock</span>
@@ -299,7 +322,7 @@ padding-bottom: 30px;">
             </div>
         </div>
     </div>
-</section>
+</section>	
 
 
 <footer class="large-cont">
@@ -329,12 +352,12 @@ padding-bottom: 30px;">
                 </ul>
             </div>
             <div class="col-xs-12 col-sm-6 col-lg-3">
-
-
-
+                
+                
+                
             </div>
             <div class="col-xs-12 col-sm-6 col-lg-3">
-
+                
             </div>
         </div>
     </div>
@@ -351,29 +374,18 @@ padding-bottom: 30px;">
         </div>
     </div>
 </footer>
-</div>
+</div>	
 
 <!-- Move to top button -->
 
 <div class="move-top">
 <div class="big-triangle-second-color"></div>
-
-<a href="#chat-bot-modal" data-toggle="modal" class="button-secondary button-shadow pull-right">
-  <span> NEED HELP ? <svg class="bi bi-chat-dots-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 01-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 11-2 0 1 1 0 012 0zm4 0a1 1 0 11-2 0 1 1 0 012 0zm3 1a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
-  </svg></span>
-  <div class="button-triangle"></div>
-  <div class="button-triangle2"></div>
-</a>
-
-</div>
+<div class="big-icon-second-color"><i class="jfont fa-lg">&#xe803;</i></div>
+</div>	
 
 <!-- Login modal -->
 <app-login></app-login>
-
-<chat-bot></chat-bot>
-
-
+  
 <!-- Register modal -->
 <app-register></app-register>
 

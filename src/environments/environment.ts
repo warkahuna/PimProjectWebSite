@@ -3,10 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  dialogflow: {
-    PimBioregChatbot: '92f0c2e30b33436a9ef967d82cf3f0e6'
-  }
+  production: false
 };
 
 /*

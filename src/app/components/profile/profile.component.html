@@ -1,7 +1,7 @@
-<div class="loader-bg"></div>
+
 <div id="wrapper">
 
-<!-- Page header -->
+<!-- Page header -->	
 	<header>
 		<div class="top-bar-wrapper">
 			<div class="container top-bar">
@@ -32,7 +32,7 @@
 								<i class="fa fa-lock"></i>
 							</a>
 						</div>
-
+						
 						<div class="top-social pull-right">
 							<a class="top-icon-circle" href="#">
 								<i class="fa fa-facebook"></i>
@@ -55,8 +55,8 @@
 						</div>
 					</div>
 				</div>
-			</div><!-- /.top-bar -->
-		</div><!-- /.Page top-bar-wrapper -->
+			</div><!-- /.top-bar -->	
+		</div><!-- /.Page top-bar-wrapper -->	
 		<nav class="navbar main-menu-cont">
 			<div class="container">
 				<div class="navbar-header">
@@ -72,25 +72,20 @@
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav navbar-right">
-            <li><a href="index2.html" class="scroll"> Accueil</a></li>
-
-
-
-
-
-
+						<li><a href="/home" class="scroll"> Accueil</a></li>
+						<li><a href="index3-street-view.html" class="scroll">Nos offres</a></li>
 						<li><a href="" class="scroll">Fonctionnalités</a></li>
 						<li><a href="contact1.html" class="scroll">Contact</a></li>
 						<li><a href="#login-modal" data-toggle="modal" >Connexion</a></li>
 					</ul>
 				</div>
 			</div>
-		</nav><!-- /.mani-menu-cont -->
+		</nav><!-- /.mani-menu-cont -->	
     </header>
-
-
-
-
+	
+  		
+   
+	
 	<section class="section-light section-top-shadow">
 		<div class="container">
 			<div class="row">
@@ -101,21 +96,21 @@
 							<h1>Profile<span class="special-color">.</span></h1>
 							<div class="title-separator-primary"></div>
 						</div>
-					</div>
+					</div>	
 					<form name="agent-from" [formGroup]="updateProfileForm" enctype="multipart/form-data">
 					<div class="row margin-top-60">
-
+						
 						<div class="col-xs-12 col-sm-9 col-md-8">
 							<div class="labelled-input">
-								<label for="first-name">First name</label><input formControlName="firstName" id="first-name" name="first-name" type="text" class="input-full main-input" placeholder="" value="{{firstName}}"/>
+								<label for="first-name">First name</label><input formControlName="firstName" id="first-name" name="first-name" type="text" class="input-full main-input" placeholder="" />
 								<div class="clearfix"></div>
 							</div>
 							<div class="labelled-input">
-								<label for="last-name">Last name</label><input formControlName="lastName" id="last-name" name="last-name" type="text" class="input-full main-input" placeholder="" value="{{lastName}}"/>
+								<label for="last-name">Last name</label><input formControlName="lastName" id="last-name" name="last-name" type="text" class="input-full main-input" placeholder="" />
 								<div class="clearfix"></div>
 							</div>
 							<div class="labelled-input">
-								<label for="email">Email</label><input formControlName="email" id="email" name="email" type="email" class="input-full main-input" placeholder="" value="{{email}}"/>
+								<label for="email">Email</label><input formControlName="email" id="email" name="email" type="email" class="input-full main-input" placeholder="" />
 								<div class="clearfix"></div>
 							</div>
 							<!--<div class="labelled-input">
@@ -128,8 +123,8 @@
 							</div>!-->
 						</div>
 					</div>
-
-
+					
+				
 					<div class="row margin-top-30">
 						<div class="col-xs-12">
 							<div class="info-box">
@@ -143,14 +138,14 @@
 						<div class="col-xs-12 col-lg-6">
 							<div class="labelled-input-short">
 								<label for="first-name">New Password</label>
-								<input id="password" name="password" type="password" class="input-full main-input" placeholder="" value=""/>
+								<input formControlName="password" id="password" name="password" type="password" class="input-full main-input" placeholder="" value=""/>
 								<div class="clearfix"></div>
 							</div>
 						</div>
 						<div class="col-xs-12 col-lg-6">
 							<div class="labelled-input-short">
 								<label for="first-name">Repeat Password</label>
-								<input id="repeat-password" name="repeat-password" type="password" class="input-full main-input" placeholder="" value=""/>
+								<input formControlName="passwordCheck" id="repeat-password" name="repeat-password" type="password" class="input-full main-input" placeholder="" value=""/>
 								<div class="clearfix"></div>
 							</div>
 						</div>
@@ -169,24 +164,24 @@
 					</div>
 					</form>
 					<div class="row margin-top-60"></div>
-				</div>
+				</div>			
 				<div class="col-xs-12 col-md-3 col-md-pull-9">
 					<div class="sidebar-left">
 						<h3 class="sidebar-title">Welcome back<span class="special-color">.</span></h3>
 						<div class="title-separator-primary"></div>
-
+						
 						<div class="profile-info margin-top-60">
 							<div class="profile-info-title negative-margin">{{lastName}} {{firstName}}</div>
 							<div class="profile-info-text pull-left">
 								<p class="subtitle-margin">Agent</p>
 								<p class="">42 Estates</p>
-
-								<a role="button" (click)="logout()" class="logout-link margin-top-30"><i class="fa fa-lg fa-sign-out"></i>Logout</a>
+								
+								<a href="/home" role="button" (click)="logout()" class="logout-link margin-top-30"><i class="fa fa-lg fa-sign-out"></i>Logout</a>
 							</div>
 							<div class="clearfix"></div>
 						</div>
 						<div class="center-button-cont margin-top-15">
-							<a href="my-profile.html" class="button-primary button-shadow button-full">
+							<a href="/profile" class="button-primary button-shadow button-full">
 								<span>Mon profile</span>
 								<div class="button-triangle"></div>
 								<div class="button-triangle2"></div>
@@ -194,8 +189,8 @@
 							</a>
 						</div>
 												<div class="center-button-cont margin-top-30">
-							<a href="my-offers.html" class="button-alternative button-shadow button-full">
-								<span>Mes devis</span>
+							<a href="/mySubscriptions"  class="button-alternative button-shadow button-full">
+								<span>My Subscriptions</span>
 								<div class="button-triangle"></div>
 								<div class="button-triangle2"></div>
 								<div class="button-icon"><i class="fa fa-pencil-square-o"></i></div>
@@ -203,17 +198,17 @@
 						</div>
 
 						<div class="center-button-cont margin-top-15">
-							<a href="submit-property.html" class="button-alternative button-shadow button-full">
-								<span>Mes Factures</span>
+							<a href="/chatQuestions" class="button-alternative button-shadow button-full">
+								<span>Questions</span>
 								<div class="button-triangle"></div>
 								<div class="button-triangle2"></div>
 								<div class="button-icon"><i class="fa fa-suitcase"></i></div>
 							</a>
 						</div>
-
-
-
-
+					
+					
+						
+						
 					</div>
 				</div>
 			</div>
@@ -257,7 +252,7 @@
 								<a href="blog-right-sidebar.html"><img src="assets/images/footer-blog1.jpg" alt="" class="footer-blog-image" /></a>
 								<div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
 								<div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
-								<div class="clearfix"></div>
+								<div class="clearfix"></div>					
 							</article>
 							<div class="footer-blog-separator hidden-xs"></div>
 						</div>
@@ -266,7 +261,7 @@
 								<a href="blog-right-sidebar.html"><img src="assets/images/footer-blog2.jpg" alt="" class="footer-blog-image" /></a>
 								<div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
 								<div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
-								<div class="clearfix"></div>
+								<div class="clearfix"></div>					
 							</article>
 						</div>
 					</div>
@@ -295,106 +290,17 @@
 			</div>
 		</div>
 	</footer>
-</div>
+</div>	
 
 <!-- Move to top button -->
 
 <div class="move-top">
 	<div class="big-triangle-second-color"></div>
 	<div class="big-icon-second-color"><i class="jfont fa-lg">&#xe803;</i></div>
-</div>
+</div>	
 
 <!-- Login modal -->
-	<div class="modal fade apartment-modal" id="login-modal">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-body">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<div class="modal-title">
-						<h1>Login<span class="special-color">.</span></h1>
-						<div class="short-title-separator"></div>
-					</div>
-					<input name="login" type="email" class="input-full main-input" placeholder="Email" />
-					<input name="password" type="password" class="input-full main-input" placeholder="Your Password" />
-					<a href="my-profile.html" class="button-primary button-shadow button-full">
-						<span>Sing In</span>
-						<div class="button-triangle"></div>
-						<div class="button-triangle2"></div>
-						<div class="button-icon"><i class="fa fa-user"></i></div>
-					</a>
-					<a href="#" class="forgot-link pull-right">Forgot your password?</a>
-					<div class="clearfix"></div>
-					<p class="login-or">OR</p>
-					<a href="#" class="facebook-button">
-						<i class="fa fa-facebook"></i>
-						<span>Login with Facebook</span>
-					</a>
-					<a href="#" class="google-button margin-top-15">
-						<i class="fa fa-google-plus"></i>
-						<span>Login with Google</span>
-					</a>
-					<p class="modal-bottom">Don't have an account? <a href="#" class="register-link">REGISTER</a></p>
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-
+	
 <!-- Register modal -->
-	<div class="modal fade apartment-modal" id="register-modal">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-body">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<div class="modal-title">
-						<h1>Register<span class="special-color">.</span></h1>
-						<div class="short-title-separator"></div>
-					</div>
-					<input name="first-name" type="text" class="input-full main-input" placeholder="Frist name" />
-					<input name="last-name" type="text" class="input-full main-input" placeholder="Last name" />
-					<input name="email" type="email" class="input-full main-input" placeholder="Email" />
-					<input name="password" type="password" class="input-full main-input" placeholder="Password" />
-					<input name="repeat-password" type="password" class="input-full main-input" placeholder="Repeat Password" />
-					<a href="my-profile.html" class="button-primary button-shadow button-full">
-						<span>Sing up</span>
-						<div class="button-triangle"></div>
-						<div class="button-triangle2"></div>
-						<div class="button-icon"><i class="fa fa-user"></i></div>
-					</a>
-					<div class="clearfix"></div>
-					<p class="login-or">OR</p>
-					<a href="#" class="facebook-button">
-						<i class="fa fa-facebook"></i>
-						<span>Sing Up with Facebook</span>
-					</a>
-					<a href="#" class="google-button margin-top-15">
-						<i class="fa fa-google-plus"></i>
-						<span>Sing Up with Google</span>
-					</a>
-					<p class="modal-bottom">Already registered? <a href="#" class="login-link">SING IN</a></p>
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
-
+	
 <!-- Forgotten password modal -->
-	<div class="modal fade apartment-modal" id="forgot-modal">
-		<div class="modal-dialog">
-			<div class="modal-content">
-				<div class="modal-body">
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-					<div class="modal-title">
-						<h1>Forgot your password<span class="special-color">?</span></h1>
-						<div class="short-title-separator"></div>
-					</div>
-					<p class="negative-margin forgot-info">Instert your account email address.<br/>We will send you a link to reset your password.</p>
-					<input name="login" type="email" class="input-full main-input" placeholder="Your email" />
-					<a href="my-profile.html" class="button-primary button-shadow button-full">
-						<span>Reset password</span>
-						<div class="button-triangle"></div>
-						<div class="button-triangle2"></div>
-						<div class="button-icon"><i class="fa fa-user"></i></div>
-					</a>
-				</div>
-			</div><!-- /.modal-content -->
-		</div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
