@@ -1,0 +1,498 @@
+
+<div id="wrapper" class="wrapper2">
+
+  <!-- Page header -->
+  <header class="header2">
+      <div class="top-bar-wrapper">
+          <div class="container top-bar">
+              <div class="row">
+                  <div class="col-xs-5 col-sm-8">
+                      <div class="top-mail pull-left hidden-xs">
+                          <span class="top-icon-circle">
+                              <i class="fa fa-envelope fa-sm"></i>
+                          </span>
+                          <span class="top-bar-text">email</span>
+                      </div>
+                      <div class="top-phone pull-left hidden-xxs">
+                          <span class="top-icon-circle">
+                              <i class="fa fa-phone"></i>
+                          </span>
+                          <span class="top-bar-text">numero</span>
+                      </div>
+                      <div class="top-localization pull-left hidden-sm hidden-md hidden-xs">
+                          <span class="top-icon-circle pull-left">
+                              <i class="fa fa-map-marker"></i>
+                          </span>
+                          <span class="top-bar-text">Adresse</span>
+                      </div>
+                  </div>
+
+              </div>
+          </div><!-- /.top-bar -->
+      </div><!-- /.Page top-bar-wrapper -->
+
+
+
+      <app-top-menu></app-top-menu>
+
+
+
+  </header>
+
+
+
+
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+
+
+
+
+  <section class="section-light top-padding-45 bottom-padding-45">
+    <div class="container">
+        <div class="row count-container">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<mat-horizontal-stepper #horizontalStepper linear="true" class="mat-elevation-z2" fxShow="false" fxShow.gt-sm>
+  <mat-step [stepControl]="billingForm" label="Billing address">
+    <form [formGroup]="billingForm">
+      <div fxLayout="row wrap">
+        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>First name</mat-label>
+              <input matInput placeholder="First name" formControlName="firstName" required>
+              <mat-error *ngIf="billingForm.controls.firstName.errors?.required">First name is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Last name</mat-label>
+              <input matInput placeholder="Last name" formControlName="lastName" required>
+              <mat-error *ngIf="billingForm.controls.lastName.errors?.required">Last name is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Middle Name/Initial</mat-label>
+              <input matInput placeholder="Middle Name/Initial" formControlName="middleName">
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Company</mat-label>
+              <input matInput placeholder="Company" formControlName="company">
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Email</mat-label>
+              <input matInput placeholder="Email" formControlName="email" required>
+              <mat-error *ngIf="billingForm.controls.email.errors?.required">Email is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Phone</mat-label>
+              <input matInput placeholder="Phone" formControlName="phone" required>
+              <mat-error *ngIf="billingForm.controls.phone.errors?.required">Phone is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="25" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Country</mat-label>
+            <mat-select placeholder="Country" formControlName="country" required>
+              <mat-option *ngFor="let country of countries" [value]="country">
+                  {{country.name}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="billingForm.controls.country.errors?.required">Country is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="25" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>City</mat-label>
+              <input matInput placeholder="City" formControlName="city" required>
+              <mat-error *ngIf="billingForm.controls.city.errors?.required">City is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="25" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>State/Province</mat-label>
+              <input matInput placeholder="State/Province" formControlName="state">
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="25" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Zip/Postal Code</mat-label>
+              <input matInput placeholder="Zip/Postal Code" formControlName="zip" required>
+              <mat-error *ngIf="billingForm.controls.zip.errors?.required">Zip/Postal Code is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Address</mat-label>
+              <input matInput placeholder="Address (street, apartment, suite, unit etc.)" formControlName="address" required>
+              <mat-error *ngIf="billingForm.controls.address.errors?.required">Address is required</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1">
+        <button mat-mini-fab matStepperNext color="primary" matTooltip="Next" matTooltipPosition="after"><mat-icon>navigate_next</mat-icon></button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="deliveryForm" label="Delivery method">
+    <form [formGroup]="deliveryForm" class="p-2">
+      <mat-radio-group formControlName="deliveryMethod" fxLayout="column" fxLayoutAlign="center" required name="methods">
+        <mat-radio-button *ngFor="let method of deliveryMethods" color="primary" [value]="method" class="mt-1"><b>{{method.name}}</b> {{method.desc}}</mat-radio-button>
+      </mat-radio-group>
+      <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1">
+        <button mat-mini-fab matStepperPrevious color="primary" matTooltip="Back" matTooltipPosition="before" class="mr-1"><mat-icon>navigate_before</mat-icon></button>
+        <button mat-mini-fab matStepperNext color="primary" matTooltip="Next" matTooltipPosition="after"><mat-icon>navigate_next</mat-icon></button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="paymentForm" label="Payment method">
+    <form [formGroup]="paymentForm">
+      <div fxLayout="row wrap">
+        <div fxFlex="100" fxLayout="column" fxLayoutAlign="start start" class="p-1">
+          <span class="text-muted">Credit Card</span>
+          <img src="assets/images/others/card-icon.png" alt="">
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Card holder name</mat-label>
+              <input matInput placeholder="Card holder name" formControlName="cardHolderName" required>
+              <mat-error *ngIf="paymentForm.controls.cardHolderName.errors?.required">Card holder name name is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Card number</mat-label>
+              <input matInput placeholder="Card number" formControlName="cardNumber" required>
+              <mat-error *ngIf="paymentForm.controls.cardNumber.errors?.required">Card number is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Expired month</mat-label>
+              <mat-select placeholder="Expired month" formControlName="expiredMonth" required>
+                <mat-option *ngFor="let month of months" [value]="month.value">
+                    {{month.name}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="paymentForm.controls.expiredMonth.errors?.required">Expired month is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Expired year</mat-label>
+              <mat-select placeholder="Expired year" formControlName="expiredYear" required>
+                <mat-option *ngFor="let year of years" [value]="year">
+                    {{year}}
+                </mat-option>
+              </mat-select>
+              <mat-error *ngIf="paymentForm.controls.expiredYear.errors?.required">Expired year is required</mat-error>
+          </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1">
+          <mat-form-field appearance="outline" class="w-100">
+              <mat-label>CVV</mat-label>
+              <input matInput placeholder="CVV" formControlName="cvv" required>
+              <mat-error *ngIf="paymentForm.controls.cvv.errors?.required">CVV is required</mat-error>
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1">
+        <button mat-mini-fab matStepperPrevious color="primary" matTooltip="Back" matTooltipPosition="before" class="mr-1"><mat-icon>navigate_before</mat-icon></button>
+        <button mat-mini-fab matStepperNext color="primary" matTooltip="Next" matTooltipPosition="after"><mat-icon>navigate_next</mat-icon></button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step label="Review Order">
+    <div fxLayout="row wrap">
+      <div fxFlex="100" class="p-1">
+        <h3 class="text-muted">Shopping Cart</h3>
+        <div class="divider"></div>
+        <div class="mat-table review-order-table">
+          <div class="mat-header-row">
+            <div class="mat-header-cell">Product</div>
+            <div class="mat-header-cell">Name</div>
+            <div class="mat-header-cell">Unit Price</div>
+            <div class="mat-header-cell">Quantity</div>
+            <div class="mat-header-cell">Total</div>
+          </div>
+          <div *ngFor="let product of appService.Data.cartList" class="mat-row">
+            <div class="mat-cell"><img [src]="product.avatar"></div>
+            <div class="mat-cell">{{product.name}}</div>
+            <div class="mat-cell">${{product.newPrice }}</div>
+            <div class="mat-cell text-muted"> {{product.cartCount}} </div>
+            <div class="mat-cell">${{ (product.newPrice*product.cartCount)  }}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div fxLayout="row wrap">
+      <div fxFlex="100" class="p-1">
+        <h3 class="text-muted mt-2">Billing information</h3>
+        <div class="divider"></div>
+      </div>
+      <div fxLayout="column" fxFlex="100" fxFlex.gt-sm="25" class="p-1">
+        <p class="text-muted">Name:</p>
+        <p>{{billingForm.controls.firstName.value}} {{billingForm.controls.lastName.value}}</p>
+      </div>
+      <div fxLayout="column" fxFlex="100" fxFlex.gt-sm="25" class="p-1">
+        <p class="text-muted">Email:</p>
+        <p>{{billingForm.controls.email.value}}</p>
+      </div>
+      <div fxLayout="column" fxFlex="100" fxFlex.gt-sm="25" class="p-1">
+        <p class="text-muted">Phone:</p>
+        <p>{{billingForm.controls.phone.value}}</p>
+      </div>
+      <div fxLayout="column" fxFlex="100" fxFlex.gt-sm="25" class="p-1">
+        <p class="text-muted">Country:</p>
+        <p>{{billingForm.controls.country.value['name']}}</p>
+      </div>
+      <div fxLayout="column" fxFlex="100" fxFlex.gt-sm="25" class="p-1">
+        <p class="text-muted">City:</p>
+        <p>{{billingForm.controls.city.value}}</p>
+      </div>
+      <div fxLayout="column" fxFlex="100" fxFlex.gt-sm="25" class="p-1">
+        <p class="text-muted">State:</p>
+        <p>{{billingForm.controls.state.value}}</p>
+      </div>
+      <div fxLayout="column" fxFlex="100" fxFlex.gt-sm="25" class="p-1">
+        <p class="text-muted">Zip/PostalCode:</p>
+        <p>{{billingForm.controls.zip.value}}</p>
+      </div>
+      <div fxLayout="column" fxFlex="100" fxFlex.gt-sm="25" class="p-1">
+        <p class="text-muted">Address:</p>
+        <p>{{billingForm.controls.address.value}}</p>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="100" class="p-1">
+        <h3 class="text-muted mt-2">Delivery information</h3>
+        <div class="divider"></div>
+        <p class="py-1">{{deliveryForm.controls.deliveryMethod.value['name']}} <span class="text-muted">{{deliveryForm.controls.deliveryMethod.value['desc']}}</span></p>
+      </div>
+    </div>
+    <div fxLayout="row">
+      <div fxFlex="100" class="p-1">
+        <h3 class="text-muted mt-2">Payment information</h3>
+        <div class="divider"></div>
+        <p class="py-1"><span class="text-muted mr-1">Card number:</span><span>XXX-XXX-XXX-7224</span></p>
+      </div>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" class="p-1">
+       <h2><span class="text-muted mr-1">Total Price:</span><span>${{grandTotal }}</span></h2>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1">
+      <button mat-mini-fab matStepperPrevious color="primary" matTooltip="Back" matTooltipPosition="before" class="mr-1"><mat-icon>navigate_before</mat-icon></button>
+      <button mat-raised-button matStepperNext color="primary" >Place order now</button>
+    </div>
+  </mat-step>
+  <mat-step label="Confirmation">
+    <div fxLayout="column" fxLayoutAlign="center center" class="p-2 text-center">
+      <button mat-fab color="primary"><mat-icon>check</mat-icon></button>
+      <h2 class="py-2">Congratulation! Your order has been processed</h2>
+      <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempus dolor ante, ut luctus mi faucibus a. Ut eu tincidunt neque. Proin porttitor id ligula id placerat. Integer nec nulla varius, dapibus libero quis, semper eros. Aliquam erat volutpat. Proin volutpat tellus vel purus interdum euismod.</p>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="center center" class="mt-2 p-1">
+      <a routerLink="/" mat-raised-button color="primary">Return to Shop</a>
+    </div>
+
+  </mat-step>
+</mat-horizontal-stepper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <section class="section-light top-padding-45 bottom-padding-45">
+      <div class="container">
+          <div class="row count-container">
+              <div class="col-xs-6 col-lg-3">
+                  <div class="number" id="number1">
+                      <div class="number-img">
+                          <i class="fa fa-credit-card"></i>
+                      </div>
+                      <span class="number-label text-color2">Paiement sécurisé</span>
+
+                  </div>
+              </div>
+              <div class="col-xs-6 col-lg-3 number_border">
+                  <div class="number" id="number2">
+                      <div class="number-img">
+                      <i class="fa fa-truck"></i>
+                      </div>
+                      <span class="number-label text-color2">Livraison 24-48h</span>
+
+                  </div>
+              </div>
+              <div class="col-xs-6 col-lg-3 number_border3">
+                  <div class="number" id="number3">
+                      <div class="number-img">
+                          <i class="fa fa-check-square"></i>
+                      </div>
+                      <span class="number-label text-color2">En stock</span>
+                  </div>
+              </div>
+              <div class="col-xs-6 col-lg-3 number_border">
+                  <div class="number" id="number4">
+                      <div class="number-img">
+                          <i class="fa fa-certificate"></i>
+                      </div>
+                      <span class="number-label text-color2">Garantie 2 ans</span>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+  <footer class="large-cont">
+      <div class="container">
+          <div class="row">
+              <div class="col-xs-6 col-sm-6 col-lg-3">
+                  <h4 class="second-color">contact us<span class="special-color">.</span></h4>
+                  <div class="footer-title-separator"></div>
+                  <p class="footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <address>
+                      <span><i class="fa fa-map-marker"></i>00456 Some Address line</span>
+                      <div class="footer-separator"></div>
+                      <span><i class="fa fa-envelope fa-sm"></i><a href="#">email@domain.tld</a></span>
+                      <div class="footer-separator"></div>
+                      <span><i class="fa fa-phone"></i>01-23456789</span>
+                  </address>
+                  <div class="clear"></div>
+              </div>
+              <div class="col-xs-6 col-sm-6 col-lg-3">
+                  <h4 class="second-color">quick links<span class="special-color">.</span></h4>
+                  <div class="footer-title-separator"></div>
+                  <ul class="footer-ul">
+                      <li><span class="custom-ul-bullet"></span><a href="index.html">Accueil</a></li>
+                      <li><span class="custom-ul-bullet"></span><a href="listing-grid-right-sidebar.html">Nos offres</a></li>
+                      <li><span class="custom-ul-bullet"></span><a href="agencies-listing-right-sidebar.html">Fonctionnalités</a></li>
+                      <li><span class="custom-ul-bullet"></span><a href="contact1.html">Contact</a></li>
+                  </ul>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-lg-3">
+
+
+
+              </div>
+              <div class="col-xs-12 col-sm-6 col-lg-3">
+
+              </div>
+          </div>
+      </div>
+  </footer>
+  <footer class="small-cont">
+      <div class="container">
+          <div class="row">
+              <div class="col-xs-12 col-md-6 small-cont">
+                  <img src="assets/images/logo-light.png" alt="" class="img-responsive footer-logo" />
+              </div>
+              <div class="col-xs-12 col-md-6 footer-copyrights">
+                  &copy; Copyright 2015 <a href="http://themeforest.net/user/johnnychaos?ref=johnnychaos" target="blank">Jan Skwara</a>. All rights reserved. Buy on <a href="http://themeforest.net/user/johnnychaos/portfolio?ref=johnnychaos" target="blank">Themeforest</a>.
+              </div>
+          </div>
+      </div>
+  </footer>
+  </div>
+
+  <!-- Move to top button -->
+
+
+  <div class="move-top">
+    <div class="big-triangle-second-color"></div>
+
+    <a href="#chat-bot-modal" data-toggle="modal" class="button-secondary button-shadow pull-right">
+      <span> NEED HELP ? <svg class="bi bi-chat-dots-fill" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 01-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 11-2 0 1 1 0 012 0zm4 0a1 1 0 11-2 0 1 1 0 012 0zm3 1a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd"/>
+      </svg></span>
+      <div class="button-triangle"></div>
+      <div class="button-triangle2"></div>
+    </a>
+
+    </div>
+
+  <router-outlet></router-outlet>

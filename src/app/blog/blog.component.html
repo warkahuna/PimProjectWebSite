@@ -1,0 +1,598 @@
+<div class="loader-bg"></div>
+<div id="wrapper">
+
+<!-- Page header -->
+	<header>
+		<div class="top-bar-wrapper">
+			<div class="container top-bar">
+				<div class="row">
+					<div class="col-xs-5 col-sm-8">
+						<div class="top-mail pull-left hidden-xs">
+							<span class="top-icon-circle">
+								<i class="fa fa-envelope fa-sm"></i>
+							</span>
+							<span class="top-bar-text">apartment@domain.tld</span>
+						</div>
+						<div class="top-phone pull-left hidden-xxs">
+							<span class="top-icon-circle">
+								<i class="fa fa-phone"></i>
+							</span>
+							<span class="top-bar-text">(0)-123-456-789</span>
+						</div>
+						<div class="top-localization pull-left hidden-sm hidden-md hidden-xs">
+							<span class="top-icon-circle pull-left">
+								<i class="fa fa-map-marker"></i>
+							</span>
+							<span class="top-bar-text">One Brookings Drive St. Louis, Missouri 63130-4899, USA</span>
+						</div>
+					</div>
+					<div class="col-xs-7 col-sm-4">
+						<div class="top-social-last top-dark pull-right" data-toggle="tooltip" data-placement="bottom" title="Login/Register">
+							<a class="top-icon-circle" href="#login-modal" data-toggle="modal">
+								<i class="fa fa-lock"></i>
+							</a>
+						</div>
+
+						<div class="top-social pull-right">
+							<a class="top-icon-circle" href="#">
+								<i class="fa fa-facebook"></i>
+							</a>
+						</div>
+						<div class="top-social pull-right">
+							<a class="top-icon-circle" href="#">
+								<i class="fa fa-twitter"></i>
+							</a>
+						</div>
+						<div class="top-social pull-right">
+							<a class="top-icon-circle" href="#">
+								<i class="fa fa-google-plus"></i>
+							</a>
+						</div>
+						<div class="top-social pull-right">
+							<a class="top-icon-circle" href="#">
+								<i class="fa fa-skype"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div><!-- /.top-bar -->
+		</div><!-- /.Page top-bar-wrapper -->
+		<nav class="navbar main-menu-cont">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar icon-bar1"></span>
+						<span class="icon-bar icon-bar2"></span>
+						<span class="icon-bar icon-bar3"></span>
+					</button>
+					<a href="index.html" title="" class="navbar-brand">
+						<img src="assets/images/logo-dark.png" alt="Apartment - Premium Real Estate Template" />
+					</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+						<ul class="nav navbar-nav navbar-right">
+              <li><a href="" class="scroll"> Accueil</a></li>
+              <li><a href="/profile" class="scroll"> Profile </a></li>
+
+
+
+            <li><a routerLink="/blog" class="scroll"> BLOG </a></li>
+
+
+
+						<li><a href="" class="scroll">Fonctionnalités</a></li>
+						<li><a href="contact1.html" class="scroll">Contact</a></li>
+						<li><a href="#login-modal" data-toggle="modal" >Connexion</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav><!-- /.mani-menu-cont -->
+    </header>
+
+
+
+
+	<section class="section-light section-top-shadow">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-9 col-md-push-3">
+					<div class="row">
+						<div class="col-xs-12">
+							<h5 class="subtitle-margin">WELCOME</h5>
+							<h1> BLOG <span class="special-color">.</span></h1>
+							<div class="title-separator-primary"></div>
+						</div>
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          <h1 class="page-header">  </h1>
+
+          <!-- Custom Success/Error Message -->
+          <div class="row show-hide-message" *ngIf="message && newPost">
+            <div [ngClass]="messageClass">
+              {{ message }}
+            </div>
+          </div>
+
+          <!-- New Post Button -->
+          <button type="button" name="button" class="btn btn-warning" *ngIf="!newPost" (click)="newBlogForm()">New Post</button>
+
+          <!-- Reload Button -->
+          <button [disabled]="loadingBlogs" type="button" name="button" class="btn btn-default" *ngIf="!newPost" (click)="reloadBlogs()"><span class="glyphicon glyphicon-repeat"></span>&nbsp;&nbsp;Reload</button>
+
+          <br />
+          <br />
+
+          <!-- New Blog Form -->
+          <form [formGroup]="form" name="blogForm" (submit)="onBlogSubmit()" *ngIf="newPost">
+            <!-- Title Input -->
+            <div class="form-group">
+              <label for="title">Title</label>
+              <div [ngClass]="{'has-success': form.controls.title.valid, 'has-error': form.controls.title.dirty && form.controls.title.errors}">
+                <!-- Title Input -->
+                <input type="text" name="title" class="form-control" placeholder="*Blog Title" autocomplete="off" formControlName="title" />
+                <!-- Validation -->
+                <ul class="help-block">
+                  <li *ngIf="form.controls.title.dirty && form.controls.title.errors?.required">This field is required.</li>
+                  <li *ngIf="(form.controls.title.dirty && form.controls.title.errors?.minlength) || (form.controls.title.dirty && form.controls.title.errors?.maxlength)">Max length: 50, Min length: 5</li>
+                  <li *ngIf="form.controls.title.dirty && form.controls.title.errors?.alphaNumericValidation">Must be a letter or number</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Body Input -->
+            <div class="form-group">
+              <label for="body">Body</label>
+              <div [ngClass]="{'has-success': form.controls.body.valid, 'has-error': form.controls.body.dirty && form.controls.body.errors}">
+                <!-- Body Input -->
+                <textarea name="body" rows="8" cols="80" placeholder="*Body" class="form-control" formControlName="body"></textarea>
+                <!-- Validation -->
+                <ul class="help-block">
+                  <li *ngIf="form.controls.body.dirty && form.controls.body.errors?.required">This field is required.</li>
+                  <li *ngIf="(form.controls.body.dirty && form.controls.body.errors?.minlength) || (form.controls.body.dirty && form.controls.body.errors?.maxlength)">Max length: 500, Min length: 5</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Go Back Button -->
+            <button [disabled]="processing" type="button" name="button" (click)="goBack()" class="btn btn-warning">Go Back</button>
+            <!-- Submit Button -->
+            <button [disabled]="processing || !form.valid" type="submit" name="button" class="btn btn-success">Submit</button>
+
+          </form>
+          <!-- New Blog Form -->
+
+          <!-- Panel Start -->
+          <div *ngIf="!newPost">
+            <!-- Panel Outer Layer -->
+            <div class="panel panel-primary" *ngFor="let blog of blogPosts">
+
+              <!-- Panel Title -->
+              <div class="panel-heading">
+                <h3 class="panel-title">{{ blog.title }}</h3>
+              </div>
+
+              <!-- Panel Body -->
+              <div class="panel-body">
+                {{ blog.body }}
+              </div>
+
+              <!-- Panel Footer Start -->
+              <div class="panel-footer">
+                <strong>Posted by: </strong>  {{ blog.createdBy }}
+                <br />
+                <strong>Date: </strong>{{ blog.createdAt | date:'MMM dd, yyyy' }}
+                <br />
+                <div *ngIf="firstName === blog.createdBy">
+                  <strong>Likes: </strong>{{ blog.likes }}
+                  <br />
+                  <strong>Dislikes: </strong>{{ blog.dislikes }}
+                </div>
+
+                <!-- Edit Button -->
+                <a [routerLink]="['/edit-blog/', blog._id]" *ngIf="firstName === blog.createdBy"><button type="button" name="button" class="btn btn-sm btn-info">Edit</button></a>
+
+
+
+
+
+                <!-- Delete Button -->
+                <a *ngIf="firstName === blog.createdBy"><button type="button" name="button"
+                  (click)="deleteBlog(blog._id)" class="btn btn-sm btn-danger">Delete</button></a>
+
+
+
+
+
+
+                <!-- Likes Dropdown  -->
+                <div class="dropdown">
+                  <!-- Like Button -->
+                  <button [disabled]="blog.likedBy.indexOf(firstName) > -1" type="button" name="button" class="btn btn-sm btn-success" *ngIf="firstName !== blog.createdBy" (click)="likeBlog(blog._id)"><span class="glyphicon glyphicon-thumbs-up">&nbsp;</span>Likes: {{ blog.likes }}</button>
+                  <!-- Dropdown Menu Items -->
+                  <div class="dropdown-content">
+                    <a [routerLink]="['/user/', liker]" *ngFor="let liker of blog.likedBy">{{ liker }}</a>
+                  </div>
+                </div>
+
+                <!-- Dislikes Dropdown  -->
+                <div class="dropdown">
+                  <!-- Dislike Button -->
+                  <button [disabled]="blog.dislikedBy.indexOf(firstName) > -1" type="button" name="button" class="btn btn-sm btn-warning" *ngIf="firstName !== blog.createdBy" (click)="dislikeBlog(blog._id)"><span class="glyphicon glyphicon-thumbs-down">&nbsp;</span>Dislikes: {{ blog.dislikes }}</button>
+                  <!-- Dropdown Menu Items -->
+                  <div class="dropdown-content">
+                    <a [routerLink]="['/user/', disliker]" *ngFor="let disliker of blog.dislikedBy">{{ disliker }}</a>
+                  </div>
+                </div>
+
+              </div>
+              <!-- Panel Footer End -->
+
+              <!-- Post Comment Box: Start -->
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <!-- Post Comment Button -->
+                  <button type="button" name="button" class="btn btn-sm btn-danger" (click)="draftComment(blog._id)" [disabled]="newComment.indexOf(blog._id) > -1">Post Comment</button>
+                  <br />
+                  <br />
+                  <div *ngIf="newComment.indexOf(blog._id) > -1">
+
+                    <!-- Form: Comment Form Start -->
+                    <form [formGroup]="commentForm">
+                      <!-- Textarea Input -->
+                      <textarea name="comment" rows="10" cols="30" class="form-control" formControlName="comment"></textarea>
+                      <!-- Validation -->
+                      <div [ngClass]="{'has-success': !commentForm.controls.comment.errors && commentForm.controls.comment.dirty, 'has-error': commentForm.controls.comment.dirty && commentForm.controls.comment.errors}">
+                        <ul class="help-block">
+                          <li *ngIf="commentForm.controls.comment.errors?.required && commentForm.controls.comment.dirty">This field is required.</li>
+                          <li *ngIf="(commentForm.controls.comment.errors?.maxlength && commentForm.controls.comment.dirty) ||(commentForm.controls.comment.errors?.minlength && commentForm.controls.comment.dirty)">Comment must be at least 1 character but no more than 200.</li>
+                        </ul>
+                      </div>
+                      <!-- Post Button -->
+                      <button [disabled]="!commentForm.valid || processing" type="submit" name="button" class="btn btn-sm btn-info" (click)="postComment(blog._id)">Post</button>
+                      <!-- Cancel Button -->
+                      <button [disabled]="processing" type="button" name="button" class="btn btn-sm btn-danger" (click)="cancelSubmission(blog._id)">Cancel</button>
+                    </form>
+                    <!-- Form: Comment Form End -->
+
+                  </div>
+
+                  <!-- Show Comments -->
+                  <li *ngIf="enabledComments.indexOf(blog._id) === -1 && blog.comments.length > 0" class="list-group-item">
+                    <span (click)="expand(blog._id)">
+                      Show comments&nbsp;&nbsp;
+                      <div class="glyphicon glyphicon-comment"></div>
+                    </span>
+                  </li>
+
+                  <!-- Hide Comments -->
+                  <li *ngIf="enabledComments.indexOf(blog._id) > -1" class="list-group-item">
+                    <span (click)="collapse(blog._id)">
+                      Hide Comments&nbsp;&nbsp;
+                      <div class="glyphicon glyphicon-comment"></div>
+                    </span>
+                  </li>
+
+                  <!-- Comment -->
+                  <div *ngIf="enabledComments.indexOf(blog._id) > -1">
+                    <li *ngFor="let comment of blog.comments" class="list-group-item">
+                      <strong> To: {{ blog.createdBy }} :</strong> {{ comment.comment }}
+                    </li>
+                  </div>
+              </ul>
+              <!-- Post Comment Box: End -->
+
+            </div>
+            <!-- Panel Outer Layer -->
+          </div>
+          <!-- Panel End -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+					<div class="row margin-top-60"></div>
+				</div>
+				<div class="col-xs-12 col-md-3 col-md-pull-9">
+					<div class="sidebar-left">
+						<h3 class="sidebar-title">Welcome back<span class="special-color">.</span></h3>
+						<div class="title-separator-primary"></div>
+
+						<div class="profile-info margin-top-60">
+							<div class="profile-info-title negative-margin">{{lastName}} {{firstName}}</div>
+							<div class="profile-info-text pull-left">
+								<p class="subtitle-margin">Agent</p>
+								<p class="">42 Estates</p>
+
+								<a role="button"  class="logout-link margin-top-30"><i class="fa fa-lg fa-sign-out"></i>Logout</a>
+							</div>
+							<div class="clearfix"></div>
+						</div>
+						<div class="center-button-cont margin-top-15">
+							<a href="my-profile.html" class="button-primary button-shadow button-full">
+								<span>Mon profile</span>
+								<div class="button-triangle"></div>
+								<div class="button-triangle2"></div>
+								<div class="button-icon"><i class="fa fa-user"></i></div>
+							</a>
+						</div>
+												<div class="center-button-cont margin-top-30">
+							<a href="my-offers.html" class="button-alternative button-shadow button-full">
+								<span>Mes devis</span>
+								<div class="button-triangle"></div>
+								<div class="button-triangle2"></div>
+								<div class="button-icon"><i class="fa fa-pencil-square-o"></i></div>
+							</a>
+						</div>
+
+						<div class="center-button-cont margin-top-15">
+							<a href="submit-property.html" class="button-alternative button-shadow button-full">
+								<span>Mes Factures</span>
+								<div class="button-triangle"></div>
+								<div class="button-triangle2"></div>
+								<div class="button-icon"><i class="fa fa-suitcase"></i></div>
+							</a>
+						</div>
+
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+    <footer class="large-cont">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-6 col-sm-6 col-lg-3">
+					<h4 class="second-color">contact us<span class="special-color">.</span></h4>
+					<div class="footer-title-separator"></div>
+					<p class="footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<address>
+						<span><i class="fa fa-map-marker"></i>00456 Some Address line</span>
+						<div class="footer-separator"></div>
+						<span><i class="fa fa-envelope fa-sm"></i><a href="#">email@domain.tld</a></span>
+						<div class="footer-separator"></div>
+						<span><i class="fa fa-phone"></i>01-23456789</span>
+					</address>
+					<div class="clear"></div>
+				</div>
+				<div class="col-xs-6 col-sm-6 col-lg-3">
+					<h4 class="second-color">quick links<span class="special-color">.</span></h4>
+					<div class="footer-title-separator"></div>
+					<ul class="footer-ul">
+						<li><span class="custom-ul-bullet"></span><a href="index.html">Home</a></li>
+						<li><span class="custom-ul-bullet"></span><a href="listing-grid-right-sidebar.html">Listing</a></li>
+						<li><span class="custom-ul-bullet"></span><a href="agencies-listing-right-sidebar.html">Agencies</a></li>
+						<li><span class="custom-ul-bullet"></span><a href="archive-grid.html">Blog</a></li>
+						<li><span class="custom-ul-bullet"></span><a href="contact1.html">Contact us</a></li>
+						<li><span class="custom-ul-bullet"></span><a href="submit-property.html">Submit property</a></li>
+					</ul>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-3">
+					<h4 class="second-color">from the blog<span class="special-color">.</span></h4>
+					<div class="footer-title-separator"></div>
+					<div class="row">
+						<div class="col-xs-6 col-sm-12">
+							<article>
+								<a href="blog-right-sidebar.html"><img src="assets/images/footer-blog1.jpg" alt="" class="footer-blog-image" /></a>
+								<div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
+								<div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
+								<div class="clearfix"></div>
+							</article>
+							<div class="footer-blog-separator hidden-xs"></div>
+						</div>
+						<div class="col-xs-6 col-sm-12">
+							<article>
+								<a href="blog-right-sidebar.html"><img src="assets/images/footer-blog2.jpg" alt="" class="footer-blog-image" /></a>
+								<div class="footer-blog-title"><a href="blog-right-sidebar.html">This post title, lorem ipsum dolor sit</a></div>
+								<div class="footer-blog-date"><i class="fa fa-calendar-o"></i>28/09/15</div>
+								<div class="clearfix"></div>
+							</article>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-12 col-sm-6 col-lg-3">
+					<h4 class="second-color">newsletter<span class="special-color">.</span></h4>
+					<div class="footer-title-separator"></div>
+					<p class="footer-p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+					<form class="form-inline footer-newsletter">
+						<input type="email" class="form-control" id="exampleInputEmail2" placeholder="enter your email">
+						<button type="submit" class="btn"><i class="fa fa-lg fa-paper-plane"></i></button>
+					</form>
+				</div>
+			</div>
+		</div>
+    </footer>
+	<footer class="small-cont">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-12 col-md-6 small-cont">
+					<img src="assets/images/logo-light.png" alt="" class="img-responsive footer-logo" />
+				</div>
+				<div class="col-xs-12 col-md-6 footer-copyrights">
+					&copy; Copyright 2015 <a href="http://themeforest.net/user/johnnychaos?ref=johnnychaos" target="blank">Jan Skwara</a>. All rights reserved. Buy on <a href="http://themeforest.net/user/johnnychaos/portfolio?ref=johnnychaos" target="blank">Themeforest</a>.
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+
+<!-- Move to top button -->
+
+<div class="move-top">
+	<div class="big-triangle-second-color"></div>
+	<div class="big-icon-second-color"><i class="jfont fa-lg">&#xe803;</i></div>
+</div>
+
+<!-- Login modal -->
+	<div class="modal fade apartment-modal" id="login-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<div class="modal-title">
+						<h1>Login<span class="special-color">.</span></h1>
+						<div class="short-title-separator"></div>
+					</div>
+					<input name="login" type="email" class="input-full main-input" placeholder="Email" />
+					<input name="password" type="password" class="input-full main-input" placeholder="Your Password" />
+					<a href="my-profile.html" class="button-primary button-shadow button-full">
+						<span>Sing In</span>
+						<div class="button-triangle"></div>
+						<div class="button-triangle2"></div>
+						<div class="button-icon"><i class="fa fa-user"></i></div>
+					</a>
+					<a href="#" class="forgot-link pull-right">Forgot your password?</a>
+					<div class="clearfix"></div>
+					<p class="login-or">OR</p>
+					<a href="#" class="facebook-button">
+						<i class="fa fa-facebook"></i>
+						<span>Login with Facebook</span>
+					</a>
+					<a href="#" class="google-button margin-top-15">
+						<i class="fa fa-google-plus"></i>
+						<span>Login with Google</span>
+					</a>
+					<p class="modal-bottom">Don't have an account? <a href="#" class="register-link">REGISTER</a></p>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+<!-- Register modal -->
+	<div class="modal fade apartment-modal" id="register-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<div class="modal-title">
+						<h1>Register<span class="special-color">.</span></h1>
+						<div class="short-title-separator"></div>
+					</div>
+					<input name="first-name" type="text" class="input-full main-input" placeholder="Frist name" />
+					<input name="last-name" type="text" class="input-full main-input" placeholder="Last name" />
+					<input name="email" type="email" class="input-full main-input" placeholder="Email" />
+					<input name="password" type="password" class="input-full main-input" placeholder="Password" />
+					<input name="repeat-password" type="password" class="input-full main-input" placeholder="Repeat Password" />
+					<a href="my-profile.html" class="button-primary button-shadow button-full">
+						<span>Sing up</span>
+						<div class="button-triangle"></div>
+						<div class="button-triangle2"></div>
+						<div class="button-icon"><i class="fa fa-user"></i></div>
+					</a>
+					<div class="clearfix"></div>
+					<p class="login-or">OR</p>
+					<a href="#" class="facebook-button">
+						<i class="fa fa-facebook"></i>
+						<span>Sing Up with Facebook</span>
+					</a>
+					<a href="#" class="google-button margin-top-15">
+						<i class="fa fa-google-plus"></i>
+						<span>Sing Up with Google</span>
+					</a>
+					<p class="modal-bottom">Already registered? <a href="#" class="login-link">SING IN</a></p>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
+<!-- Forgotten password modal -->
+	<div class="modal fade apartment-modal" id="forgot-modal">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-body">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<div class="modal-title">
+						<h1>Forgot your password<span class="special-color">?</span></h1>
+						<div class="short-title-separator"></div>
+					</div>
+					<p class="negative-margin forgot-info">Instert your account email address.<br/>We will send you a link to reset your password.</p>
+					<input name="login" type="email" class="input-full main-input" placeholder="Your email" />
+					<a href="my-profile.html" class="button-primary button-shadow button-full">
+						<span>Reset password</span>
+						<div class="button-triangle"></div>
+						<div class="button-triangle2"></div>
+						<div class="button-icon"><i class="fa fa-user"></i></div>
+					</a>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
