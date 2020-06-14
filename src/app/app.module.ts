@@ -20,7 +20,6 @@ import { NewSubscriptionComponent } from './components/new-subscription/new-subs
 import { ChatQuestionsComponent } from './components/chat-questions/chat-questions.component';
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
 import { ConstantsService } from './constants.service';
-import { ForgetPasswordAppComponent } from './forget-password-app/forget-password-app.component';
 
 
 @NgModule({
@@ -35,7 +34,6 @@ import { ForgetPasswordAppComponent } from './forget-password-app/forget-passwor
     MySubscriptionsComponent,
     NewSubscriptionComponent,
     ChatQuestionsComponent,
-    ForgetPasswordAppComponent,
   ],
   imports: [
     BrowserModule,
