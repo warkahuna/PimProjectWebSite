@@ -1,0 +1,345 @@
+<!-- <app-top-menu></app-top-menu> -->
+<section class="team section-light section-both-shadow">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-9">
+        <h5 class="subtitle-margin">BioReg</h5>
+            <h1>Our Products<span class="special-color">.</span></h1>
+      </div>
+      <div class="col-xs-12 col-sm-3">
+        <a href="#" class="navigation-box navigation-box-next" id="team-owl-next"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont">&#xe802;</i></div></a>
+        <a href="#" class="navigation-box navigation-box-prev"  id="team-owl-prev"><div class="navigation-triangle"></div><div class="navigation-box-icon"><i class="jfont">&#xe800;</i></div></a>
+      </div>
+      <div class="col-xs-12">
+        <div class="title-separator-primary"></div>
+      </div>
+    </div>
+  </div>
+  <div class="team-container" >
+    <div class="owl-carousel" id="team-owl"  >
+
+
+      <div class="team-member-cont">
+        <div class="team-member">
+          <div class="team-photo">
+            <img [src]="Products[0].avatar"  [alt]="Products[0].name">
+            <div class="big-triangle"></div>
+            <div class="big-triangle2"></div>
+            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
+            <div class="team-description">
+              <div>
+                <h4>{{Products[0].name}}<span class="special-color"></span></h4>
+                <p class="team-text">
+                  DESCRIPTION :
+                  <br>
+                  {{Products[0].description}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-name">
+            <app-controls [product]="Products[0]" (onOpenProductDialog)="openProductDialog(Products[0])"></app-controls>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="team-member-cont">
+        <div class="team-member">
+          <div class="team-photo">
+            <img [src]="Products[1].avatar"  [alt]="Products[1].name">
+            <div class="big-triangle"></div>
+            <div class="big-triangle2"></div>
+            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
+            <div class="team-description">
+              <div>
+                <h4>{{Products[1].name}}<span class="special-color"></span></h4>
+                <p class="team-text">
+                  DESCRIPTION :
+                  <br>
+                  {{Products[1].description}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-name">
+            <app-controls [product]="Products[1]" (onOpenProductDialog)="openProductDialog(Products[1])"></app-controls>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="team-member-cont">
+        <div class="team-member">
+          <div class="team-photo">
+            <img [src]="Products[2].avatar"  [alt]="Products[2].name">
+            <div class="big-triangle"></div>
+            <div class="big-triangle2"></div>
+            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
+            <div class="team-description">
+              <div>
+                <h4>{{Products[2].name}}<span class="special-color"></span></h4>
+                <p class="team-text">
+                  DESCRIPTION :
+                  <br>
+                  {{Products[2].description}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-name">
+            <app-controls [product]="Products[2]" (onOpenProductDialog)="openProductDialog(Products[2])"></app-controls>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="team-member-cont">
+        <div class="team-member">
+          <div class="team-photo">
+            <img [src]="Products[3].avatar"  [alt]="Products[3].name">
+            <div class="big-triangle"></div>
+            <div class="big-triangle2"></div>
+            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
+            <div class="team-description">
+              <div>
+                <h4>{{Products[3].name}}<span class="special-color"></span></h4>
+                <p class="team-text">
+                  DESCRIPTION :
+                  <br>
+                  {{Products[3].description}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-name">
+            <app-controls [product]="Products[3]" (onOpenProductDialog)="openProductDialog(Products[3])"></app-controls>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="team-member-cont">
+        <div class="team-member">
+          <div class="team-photo">
+            <img [src]="Products[4].avatar"  [alt]="Products[4].name">
+            <div class="big-triangle"></div>
+            <div class="big-triangle2"></div>
+            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
+            <div class="team-description">
+              <div>
+                <h4>{{Products[4].name}}<span class="special-color"></span></h4>
+                <p class="team-text">
+                  DESCRIPTION :
+                  <br>
+                  {{Products[4].description}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-name">
+            <app-controls [product]="Products[4]" (onOpenProductDialog)="openProductDialog(Products[4])"></app-controls>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="team-member-cont">
+        <div class="team-member">
+          <div class="team-photo">
+            <img [src]="Products[5].avatar"  [alt]="Products[5].name">
+            <div class="big-triangle"></div>
+            <div class="big-triangle2"></div>
+            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
+            <div class="team-description">
+              <div>
+                <h4>{{Products[5].name}}<span class="special-color"></span></h4>
+                <p class="team-text">
+                  DESCRIPTION :
+                  <br>
+                  {{Products[5].description}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-name">
+            <app-controls [product]="Products[5]" (onOpenProductDialog)="openProductDialog(Products[5])"></app-controls>
+
+          </div>
+        </div>
+      </div>
+
+<!--
+
+      <div class="team-member-cont">
+        <div class="team-member">
+          <div class="team-photo">
+            <img [src]="Products[6].avatar"  [alt]="Products[6].name">
+            <div class="big-triangle"></div>
+            <div class="big-triangle2"></div>
+            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
+            <div class="team-description">
+              <div>
+                <h4>{{Products[6].name}}<span class="special-color"></span></h4>
+                <p class="team-text">
+                  DESCRIPTION :
+                  <br>
+                  {{Products[6].description}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-name">
+            <app-controls [product]="Products[6]" (onOpenProductDialog)="openProductDialog(Products[6])"></app-controls>
+
+          </div>
+        </div>
+      </div>
+
+
+      <div class="team-member-cont">
+        <div class="team-member">
+          <div class="team-photo">
+            <img [src]="Products[7].avatar"  [alt]="Products[7].name">
+            <div class="big-triangle"></div>
+            <div class="big-triangle2"></div>
+            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
+            <div class="team-description">
+              <div>
+                <h4>{{Products[7].name}}<span class="special-color"></span></h4>
+                <p class="team-text">
+                  DESCRIPTION :
+                  <br>
+                  {{Products[7].description}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-name">
+            <app-controls [product]="Products[7]" (onOpenProductDialog)="openProductDialog(Products[7])"></app-controls>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="team-member-cont">
+        <div class="team-member">
+          <div class="team-photo">
+            <img [src]="Products[8].avatar"  [alt]="Products[8].name">
+            <div class="big-triangle"></div>
+            <div class="big-triangle2"></div>
+            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
+            <div class="team-description">
+              <div>
+                <h4>{{Products[8].name}}<span class="special-color"></span></h4>
+                <p class="team-text">
+                  DESCRIPTION :
+                  <br>
+                  {{Products[8].description}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-name">
+            <app-controls [product]="Products[8]" (onOpenProductDialog)="openProductDialog(Products[8])"></app-controls>
+
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="team-member-cont">
+        <div class="team-member">
+          <div class="team-photo">
+            <img [src]="Products[9].avatar"  [alt]="Products[9].name">
+            <div class="big-triangle"></div>
+            <div class="big-triangle2"></div>
+            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
+            <div class="team-description">
+              <div>
+                <h4>{{Products[9].name}}<span class="special-color"></span></h4>
+                <p class="team-text">
+                  DESCRIPTION :
+                  <br>
+                  {{Products[9].description}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-name">
+            <app-controls [product]="Products[9]" (onOpenProductDialog)="openProductDialog(Products[9])"></app-controls>
+
+          </div>
+        </div>
+      </div>
+-->
+
+
+
+<!--
+      <div class="team-member-cont">
+        <div class="team-member">
+          <div class="team-photo">
+            <img [src]="Products[10].avatar"  [alt]="Products[10].name">
+            <div class="big-triangle"></div>
+            <div class="big-triangle2"></div>
+            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
+            <div class="team-description">
+              <div>
+                <h4>{{Products[10].name}}<span class="special-color"></span></h4>
+                <p class="team-text">
+                  DESCRIPTION :
+                  <br>
+                  {{Products[10].description}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-name">
+            <app-controls [product]="Products[10]" (onOpenProductDialog)="openProductDialog(Products[10])"></app-controls>
+
+          </div>
+        </div>
+      </div>
+-->
+
+
+
+<!--
+      <div class="team-member-cont">
+        <div class="team-member">
+          <div class="team-photo">
+            <img [src]="Products[11].avatar"  [alt]="Products[11].name">
+            <div class="big-triangle"></div>
+            <div class="big-triangle2"></div>
+            <a class="big-icon big-icon-plus" href="agent-right-sidebar.html"><i class="jfont">&#xe804;</i></a>
+            <div class="team-description">
+              <div>
+                <h4>{{Products[11].name}}<span class="special-color"></span></h4>
+                <p class="team-text">
+                  DESCRIPTION :
+                  <br>
+                  {{Products[11].description}}
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="team-name">
+            <app-controls [product]="Products[11]" (onOpenProductDialog)="openProductDialog(Products[11])"></app-controls>
+
+          </div>
+        </div>
+      </div>
+-->
+
+
+
+    </div>
+  </div>
+</section>
