@@ -10,6 +10,7 @@ import { ResetPasswordComponent } from './components/reset-password/reset-passwo
 import { MySubscriptionsComponent } from './components/my-subscriptions/my-subscriptions.component';
 import { NewSubscriptionComponent } from './components/new-subscription/new-subscription.component';
 import { ChatQuestionsComponent } from './components/chat-questions/chat-questions.component';
+import { ForgetPasswordAppComponent } from './forget-password-app/forget-password-app.component';
 
 
 const routes:Routes = [
@@ -23,6 +24,7 @@ const routes:Routes = [
   {path:'mySubscriptions',component:MySubscriptionsComponent},
   {path:'newSubscriptions',component:NewSubscriptionComponent},
   {path:'chatQuestions',component:ChatQuestionsComponent},
+  {path:'forgotPasswordApp',component:ForgetPasswordAppComponent},
   {path:'**',component:HomeComponent},
 ];
 

@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  ipServer = "http://192.168.1.7:5000";
+  ipServer = "http://192.168.46.1:5000";
   constructor(private http: HttpClient) { }
 
   register(body:any)
