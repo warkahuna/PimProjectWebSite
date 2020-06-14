@@ -25,11 +25,27 @@ import { AppSettings } from './app.settings';
 import { MejdaService } from './Services/mejda.service';
 import { FileUploadService } from './Services/file-upload.service';
 import { BlogService } from './Services/blog.service';
-
+import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
+import { EditBlogComponent } from './blog/edit-blog/edit-blog.component';
+import { BlogComponent } from './blog/blog.component';
+import { ProductsListComponent } from './components/products-list/products-list.component';
+import { ProductDialogComponent } from './components/products-list/product-dialog/product-dialog.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
+import { WishlistComponent } from './components/wishlist/wishlist.component';
+import { CompareComponent } from './components/compare/compare.component';
+import { CartComponent } from './components/cart/cart.component';
+import { ChatModule } from './chat/chat.module';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    CartComponent,
+    CompareComponent,
+    WishlistComponent,
+    CheckoutComponent,
+    ProductDialogComponent,
+    ProductsListComponent,
     HomeComponent,
     LoginComponent,
     RegisterComponent,
@@ -40,6 +56,9 @@ import { BlogService } from './Services/blog.service';
     NewSubscriptionComponent,
     ChatQuestionsComponent,
     ForgetPasswordAppComponent,
+    BlogComponent,
+    EditBlogComponent,
+    ChatBotComponent,
   ],
   imports: [
     BrowserModule,
@@ -48,6 +67,8 @@ import { BlogService } from './Services/blog.service';
     ReactiveFormsModule,
     HttpClientModule,
     NgxPrettyDateModule,
+    SharedModule,
+    ChatModule,
     BrowserAnimationsModule, // required animations module
     ToastrModule.forRoot({
       timeOut: 5000,

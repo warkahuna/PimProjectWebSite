@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~9.1.9",
     "@angular/router": "~9.1.9",
     "@material/dialog": "^6.0.0",
+    "@material/snackbar": "^6.0.0",
     "bootstrap": "^4.5.0",
     "ngx-perfect-scrollbar": "^9.0.0",
     "ngx-pretty-date": "^1.1.0",
