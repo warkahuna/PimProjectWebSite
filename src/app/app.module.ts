@@ -12,6 +12,7 @@ import { UserService } from './user.service';
 import { HttpClientModule } from '@angular/common/http';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
+import { ForgetPasswordAppComponent } from './forget-password-app/forget-password-app.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
@@ -20,6 +21,10 @@ import { NewSubscriptionComponent } from './components/new-subscription/new-subs
 import { ChatQuestionsComponent } from './components/chat-questions/chat-questions.component';
 import { NgxPrettyDateModule } from 'ngx-pretty-date';
 import { ConstantsService } from './constants.service';
+import { AppSettings } from './app.settings';
+import { MejdaService } from './Services/mejda.service';
+import { FileUploadService } from './Services/file-upload.service';
+import { BlogService } from './Services/blog.service';
 
 
 @NgModule({
@@ -34,6 +39,7 @@ import { ConstantsService } from './constants.service';
     MySubscriptionsComponent,
     NewSubscriptionComponent,
     ChatQuestionsComponent,
+    ForgetPasswordAppComponent,
   ],
   imports: [
     BrowserModule,
@@ -51,7 +57,7 @@ import { ConstantsService } from './constants.service';
       preventDuplicates: true,
     }) // ToastrModule added
   ],
-  providers: [UserService,ConstantsService],
+  providers: [UserService,ConstantsService,AppSettings, MejdaService, FileUploadService, BlogService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

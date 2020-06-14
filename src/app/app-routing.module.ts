@@ -22,6 +22,7 @@ import { ChatBotComponent } from './components/chat-bot/chat-bot.component';
 
 import { BlogComponent } from './blog/blog.component';
 import { EditBlogComponent } from './blog/edit-blog/edit-blog.component';
+import { ForgetPasswordAppComponent } from './forget-password-app/forget-password-app.component';
 
 
 
@@ -34,6 +35,7 @@ const routes:Routes = [
   {path:'register',component:RegisterComponent},
   {path:'forgotPassword',component:ForgotPasswordComponent},
   {path:'resetPassword/:key',component:ResetPasswordComponent},
+  {path:'forgotPasswordApp',component:ForgetPasswordAppComponent},
   {path:'cart',component:CartComponent},
   {path:'compare',component:CompareComponent},
   {path:'create-product',component:CreateProductComponent},
