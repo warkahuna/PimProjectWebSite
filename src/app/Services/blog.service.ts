@@ -14,7 +14,7 @@ export class BlogService {
 
 
 
-  baseURL = "http://localhost:5000/blogs";
+  baseURL = "http://51.210.111.37:5000/blogs";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 

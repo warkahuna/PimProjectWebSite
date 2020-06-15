@@ -28,7 +28,7 @@ export class Data {
 export class MejdaService {
 
 
-  baseURL = "http://localhost:5000/api";
+  baseURL = "http://51.210.111.37:5000/api";
   headers = new HttpHeaders().set('Content-Type', 'application/json');
 
 
